@@ -1,6 +1,7 @@
 const Cep = document.querySelector("#cepInputt")
 const Numero = document.querySelector("#numeroInputt")
 const chkNPN = document.querySelector("#chkNPN")
+const consultAtual = document.querySelector("#consultAtual")
 
 const habilitarBotao = () => {
     const inputCep = document.querySelector("#cepInputt").value
@@ -18,7 +19,7 @@ const habilitarBotao = () => {
 const validarCep = cep => {
     let test = /^[0-9]{2}\.[0-9]{3}-[0-9]{3}$/
     cep = cep.replace(/^\s+|\s+$/g, '');
-    if (test.test(cep)){
+    if ((test.test(cep))){
         return true
     } else {
         return false
@@ -35,7 +36,7 @@ Cep.addEventListener('keypress', () => {
     }
 })
 
-function ToggleNum() {
+const ToggleNum = () => {
     if (chkNPN.checked) {
         Numero.disabled = true
     } else {
