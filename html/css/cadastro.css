@@ -1,0 +1,239 @@
+#cadastro {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 440px;
+    margin-top: 5%;
+    font-family: 'Lato', sans-serif;
+}
+
+/* demostrador da parte do cadastro area */
+
+#marcadores {
+    background-color: #B1DEFF;
+    height: 314px;
+    width: 260px;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    border-width: 1px;
+}
+
+ul {
+    padding: 35px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+}
+
+.uncheckedLi {
+    width: 12px;
+    height: 12px;
+    background-color: #D7ECFF;
+    border-style: solid;
+    border-color: #4DA2F9;
+    border-width: 9px;
+    border-radius: 50px;
+    box-sizing: content-box;
+}
+
+.checkedLi {
+    width: 15px;
+    height: 15px;
+    background-color: #D7ECFF;
+    border-style: solid;
+    border-color: #4DA2F9;
+    border-width: 7px;
+    border-radius: 50px;
+    box-sizing: content-box;
+}
+
+.doneLi {
+    background: #4DA2F9 url(/imagens/done.png) no-repeat center 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    box-sizing: content-box;
+}
+
+.linha {
+    height: 80px;
+    width: 1px;
+    margin-left: 14.5px;
+    background-color: black;
+}
+
+/* dados area */
+
+#dados {
+    background-color: #ffffff;
+    padding: 1%;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 40%;
+    max-width: 690px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.column {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 340px;
+    height: 250px;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.col-3,
+.effect-8 {
+    width: 100%;
+    max-width: 340px;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    align-items: center;
+    max-width: 340px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    font-size: 100%;
+    cursor: pointer;
+    background-color: #41F5AA;
+}
+
+.column .botao{
+    position: absolute;
+    bottom: 15px;
+}
+
+#data{
+    height: 45px;
+}
+
+#dataDiv h2{
+    font-size: 130%;
+}
+
+#radio{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+
+}
+
+
+/* planos area */
+
+#plano {
+    border-radius: 20px;
+    background-color: #ffffff;
+    width: 250px;
+    height: 265px;
+}
+
+
+#title {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #4DA2F9;
+    height: 20%;
+    font-size: 120%;
+    gap: 1%;
+}
+
+#titleImg {
+    width: 12%;
+    height: 56.62%;
+}
+
+#bottom {
+    height: 80%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#planoNome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+#planoBeneficio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    margin-bottom: 5%;
+    font-size: 100%;
+    font-weight: 300;
+}
+
+#Internet {
+    height: min-content;
+    margin-right: 5%;
+}
+
+#Price {
+    display: flex;
+    background: #797777;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    font-weight: 600;
+}
+
+#taxas {
+    padding: 5%;
+    height: 40%;
+}
+
+#taxa {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 60%;
+}
+
+.taxa {
+    font-size: 90%;
+}
+
+#taxaPreco {
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+.taxaPreco {
+    font-size: 90%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    /* Footer height */
+}

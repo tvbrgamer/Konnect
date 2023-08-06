@@ -1,0 +1,284 @@
+/* Seção do dialog */
+
+dialog {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  width: 979px;
+  height: 430px;
+  background-color: #D7ECFF;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+dialog::backdrop {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#upDialog {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  width: 979px;
+  height: 64px;
+  border: solid;
+  border-width: 1px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#updialogH2 {
+  float: left;
+  margin-left: 21px;
+  margin-top: 12px;
+  font-size: 30px;
+}
+
+#updialogButton {
+  float: right;
+  position: relative;
+  right: 5px;
+  top: 3px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#bottomDialog {
+  height: 365px;
+  padding: 30px;
+}
+
+#bottomdialogH2 {
+  font-size: 30px;
+}
+
+.consultarButton {
+  background-color: #63F6B8;
+  font-size: 22px;
+  height: 50px;
+  border-radius: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#dados {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cepInput {
+  width: 356px;
+}
+
+#numeroInput {
+  width: 201px;
+}
+
+#numeroInputt:disabled {
+  background-color: #c7c5c5;
+}
+
+#consultAtual {
+  width: 406px;
+}
+
+#consultDisponibilidade {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 265px;
+}
+
+#utilitario {
+  display: flex;
+  margin-top: 20px;
+  GAP: 225px;
+
+}
+
+#nseiCEP {
+  width: 184px;
+  height: 26px;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+#ntemNum {
+  font-size: 20px;
+}
+
+/* "body" */
+
+#txtBody {
+
+  font-family: 'Lato', sans-serif;
+  width: 600px;
+  height: 80px;
+  text-align: center;
+  margin-top: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 89px;
+}
+
+#txtBody h1 {
+  font-size: 35px;
+}
+
+#txtBody h3 {
+  font-size: 20px;
+}
+
+/* cards */
+
+section#cardArea {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: #AED9FF;
+  margin-right: auto;
+  margin-left: auto;
+  width: 98%;
+  max-width: 1165px;
+  height: 434px;
+  border-radius: 10px;
+}
+
+.cardBox {
+  border-radius: 20px;
+  border: 3px solid #000;
+  background: #64CBF8;
+  width: 325px;
+  height: 408px;
+  margin: 10px;
+}
+
+.cardItem {
+  height: 240px;
+}
+
+.cardItem .txtArea {
+  margin: 22px auto auto auto;
+  width: 287px;
+}
+
+.cardItem h1 {
+  font-size: 30px;
+}
+
+.cardItem h3 {
+  margin-top: 9px;
+  font-size: 22px;
+}
+
+.cardItem h4 {
+  margin-top: 41px;
+  font-size: 20px;
+}
+
+.imgKonnectus {
+  margin-top: 15px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 360px;
+}
+
+.cardBottom {
+  position: relative;
+  border-radius: 20px;
+  border: 3px solid #000;
+  box-shadow: 0px -2px 5px 0px #000;
+  background: #64CBF8;
+  width: 325px;
+  height: 145px;
+  left: -3px;
+}
+
+.cardBottom .txtArea {
+  text-align: center;
+  height: 52px;
+  margin-top: 11px;
+}
+
+.cardBottom .txtArea h1 {
+  font-size: 30px;
+}
+
+.cardBottom .txtArea h3 {
+  font-size: 20px;
+}
+
+.buttonAssinar {
+  background-color: #41F5AA;
+  display: flex;
+  justify-content: center;
+  width: 215px;
+  height: 40px;
+  padding: 5px 0px;
+  align-items: center;
+  margin: 17px auto 21px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  font-size: 25px;
+}
+
+.buttonAssinar button {
+  width: 215px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.buttonAssinar:hover {
+  background-color: #38db97;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+
+
+/* Seção do time de e-sports */
+
+section#ESports {
+  margin-top: 57px;
+  height: 586px;
+  background-color: #171115;
+  margin-bottom: 35px;
+}
+
+#txtArea {
+  float: left;
+  color: #FFF;
+  font-family: 'Press Start 2P', cursive;
+  width: 50%;
+  height: 183px;
+  margin: 52px 25px 142px 5%;
+}
+
+#imgESports {
+  margin: 19px auto 68px 20px;
+  width: 30%;
+  max-width: 543px;
+}
+
+
+section#ESports h1 {
+  font-size: 2em;
+}
+
+section#ESports h3 {
+  margin: 140px auto auto auto;
+  font-size: 1em;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/borda.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/modalScript.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <title>Konnect</title>
+</head>
+
+<body>
+    <header>
+        <div id="Logo">
+            <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
+        </div>
+        <div id="headerButton">
+            <a href="">
+                <div id="atendimento">Atendimento</div>
+            </a>
+            <a href="">
+                <div id="sobre">Sobre Nós</div>
+            </a>
+            <a href="" class="login">
+                <div class="login">
+                    <img src="imagens/login.png" alt="login icone" width="39px" height="39px" id="imgLogin">
+                    <span id="loginTxt">Login</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <dialog id="dialog">
+
+        <div id="upDialog">
+
+            <h2 id="updialogH2">Assinatura</h2>
+
+            <button id="updialogButton" onclick="Closemodal()" type="button"> X </button>
+
+        </div>
+
+        <form action="cadastro.html" id="bottomDialog">
+            <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
+
+            <button id="consultAtual" class="consultarButton"> Consultar utilizando a localização atual</button>
+
+            <div id="dados">
+                <div id="cepInput" class="col-3">
+                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" onchange="habilitarBotao()" maxlength="10" autocomplete="off">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+
+                <div id="numeroInput" class="col-3">
+                    <input id="numeroInputt" class="effect-8" type="text" maxlength="10" placeholder="Nº:"
+                    onchange="habilitarBotao()" autocomplete="off">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+
+                <button disabled="disabled" type="submit" id="consultDisponibilidade" class="consultarButton" type="button">Consultar
+                    disponibilidade</button>
+
+            </div>
+
+            <div id="utilitario">
+
+                <a id="nseiCEP" href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener noreferrer">Não sei meu CEP</a>
+
+                <div id="ntemNum">
+                    <input type="checkbox" id="chkNPN" value="" onchange="ToggleNum()"> Não possuo número
+                </div>
+            </div>
+
+        </form>
+
+    </dialog>
+
+
+    <div id="txtBody">
+        <h1>Planos de Internet para a sua casa</h1>
+        <h3>Aproveite as opções de planos que temos para você.</h3>
+    </div>
+
+    <section id="cardArea">
+
+        <div class="cardBox">
+            <div class="cardItem">
+                <div class="txtArea">
+                    <h1>75 Mega</h1>
+
+                    <h3>Internet com wifi grátis</h3>
+
+                    <h4>Acesso ao Konnectus</h4>
+
+                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
+                </div>
+            </div>
+            <div class="cardBottom">
+                <div class="txtArea">
+                    <h3>A partir de:</h3>
+                    <h1>R$ 39,90/mês</h1>
+                </div>
+                <button onclick="Showmodal()" class="buttonAssinar" id="button39">
+                    Assinar
+                </button>
+            </div>
+        </div>
+
+        <div class="cardBox">
+            <div class="cardItem">
+                <div class="txtArea">
+                    <h1>100 Mega</h1>
+
+                    <h3>Internet com wifi grátis</h3>
+
+                    <h4>Acesso ao Konnectus</h4>
+
+                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
+                </div>
+            </div>
+            <div class="cardBottom">
+                <div class="txtArea">
+                    <h3>A partir de:</h3>
+                    <h1>R$ 69,90/mês</h1>
+                </div>
+                <button onclick="Showmodal()" class="buttonAssinar" id="button69">
+                    Assinar
+                </button>
+            </div>
+        </div>
+
+        <div class="cardBox">
+            <div class="cardItem">
+                <div class="txtArea">
+                    <h1>500 Mega</h1>
+
+                    <h3>Internet com wifi grátis</h3>
+
+                    <h4>Acesso ao Konnectus</h4>
+
+                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
+                </div>
+            </div>
+            <div class="cardBottom">
+                <div class="txtArea">
+                    <h3>A partir de:</h3>
+                    <h1>R$ 169,90/mês</h1>
+                </div>
+                <button onclick="Showmodal()" class="buttonAssinar" id="button169">
+                    Assinar
+                </button>
+            </div>
+        </div>
+
+    </section>
+    <section id="ESports">
+
+        <div id="txtArea">
+            <h1>Conheça o nosso time de E-Sports</h1>
+            <h3>Venha conhecer o universo dos
+                Kagueimers, um time de e-sports que
+                não para de surpreender!<br><br>
+                Acompanhe-nos e seja parte dessa incrível jornada gueimer!</h3>
+        </div>
+
+        <img id="imgESports" src="imagens/Kagagueime.png" alt="ESports kagueimers">
+    </section>
+
+    <footer>
+        <div id="footerA">
+            <a href="">Política de privacidade</a>
+            <a href="">Portal de privacidade</a>
+        </div>
+        <div id="direitosFooter">© 2023 Konnect. Todos os direitos reservados. CNPJ: 25.940.934/0001-34 - Rua Coronel Alencastro, 48 - Rio de Janeiro - RJ</div>
+    </footer>
+
+</body>
