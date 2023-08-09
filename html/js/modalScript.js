@@ -1,7 +1,6 @@
 const Cep = document.querySelector("#cepInputt");
 const Numero = document.querySelector("#numeroInputt");
 const chkNPN = document.querySelector("#chkNPN");
-const consultAtual = document.querySelector("#consultAtual");
 const botaoFechar = document.querySelector("#updialogbutton");
 
 const habilitarBotao = () => {
@@ -27,11 +26,13 @@ const validarCep = (cep) => {
   }
 };
 
-Cep.addEventListener("keypress", () => {
+Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
 
   if (inputlength === 5) {
     Cep.value += "-";
+  } else if (inputlength === 9){
+    Numero.focus();
   }
 });
 
@@ -61,3 +62,12 @@ const Valor = valor => {
         localStorage.setItem("valor", "R$ 169,90")
     }
 }
+
+const keyboard = (event) => {
+  if(event.keyCode === 13) {
+    consultDisponibilidade.click();
+  }
+}
+
+Cep.addEventListener('keypress', keyboard)
+Numero.addEventListener('keypress', keyboard)

@@ -1,6 +1,4 @@
 const consultDisponibilidade = document.querySelector("#consultDisponibilidade");
-const cep = document.querySelector("#cepInputt");
-const num = document.querySelector("#numeroInputt");
 
 
 /*
@@ -22,7 +20,7 @@ const watchID = () => {
 
 // Meu orgulho 🤠
 consultDisponibilidade.addEventListener("click", (e) => {
-  let pesquisaCep = cep.value.replace("-", "");
+  let pesquisaCep = Cep.value.replace("-", "");
   const opcoes = {
     method: "get",
     mode: "cors",
@@ -33,7 +31,7 @@ consultDisponibilidade.addEventListener("click", (e) => {
       response.json().then((data) => {
         if (!data.erro) {
           localStorage.setItem("endereco", data);
-          localStorage.setItem("numero", num.value);
+          localStorage.setItem("numero", Numero.value);
           window.location.href = "./cadastro.html";
         } else {
           alert("Deu erro paizao!");

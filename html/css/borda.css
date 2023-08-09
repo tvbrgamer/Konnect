@@ -37,7 +37,7 @@ body {
 }
 
 /* necessary to give position: relative to parent. */
-input[type="text"], input[type="number"] {
+input[type="text"], input[type="number"], input[type="date"] {
     font: 22px Lato, Arial, sans-serif;
     background-color: #F3F3F3;
     color: #000000;

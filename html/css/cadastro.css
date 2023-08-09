@@ -70,6 +70,13 @@ li {
     background-color: black;
 }
 
+.linhapronta {
+    height: 80px;
+    width: 1px;
+    margin-left: 14.5px;
+    background-color: #4DA2F9;
+}
+
 /* dados area */
 
 #dados {
