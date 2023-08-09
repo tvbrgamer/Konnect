@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
     <script defer src="js/cadastro.js"></script>
+    <script defer src="js/valida.js"></script>
+    <script defer src="js/cpf.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,49 +70,49 @@
 
             <div class="column">
                 <div id="" class="col-3">
-                    <input id="cpf" class="effect-8" type="text" maxlength="10" placeholder="CPF:">
+                    <input id="cpf" class="effect-8" type="text" maxlength="14" placeholder="CPF:" autocomplete="off" oninput="Cpfmask(), habilitarBotao()">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
                 <div id="" class="col-3">
-                    <input id="" class="effect-8" type="text" placeholder="E-mail:">
+                    <input id="email" class="effect-8" type="email" placeholder="E-mail:" autocomplete="off" oninput="habilitarBotao()" required>
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
-
                 <div id="" class="col-3">
-                    <input id="" class="effect-8" type="text" maxlength="10" placeholder="RG:">
+                    <input id="data" class="effect-8" type="text" placeholder="Nascimento:" onfocus="(this.type='date')" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
+                
             </div>
             <div class="column">
                 <div id="" class="col-3">
-                    <input id="" class="effect-8" type="text" placeholder="Nome:">
+                    <input id="nome" class="effect-8" type="text" placeholder="Nome Completo:" autocomplete="off" oninput="apenasLetras(this), habilitarBotao()" onblur="(this.value = this.value.trim())">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
+                <!-- <div id="" class="col-3">
+                    <input id="tel" class="effect-8" type="tel" placeholder="Telefone:" autocomplete="off" oninput="habilitarBotao()">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div> -->
+                
                 <div id="" class="col-3">
-                    <input id="" class="effect-8" type="text" placeholder="Telefone:">
+                    <input id="rg" class="effect-8" type="text" maxlength="12" placeholder="RG:" autocomplete="off" oninput="habilitarBotao(), rgMask()" title="Não consigo pensar em nada">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
-
-                <div id="" class="col-3">
-                    <input id="data" class="effect-8" type="date" placeholder="Nascimento:">
-                    <span class="focus-border">
-                        <i></i>
-                    </span>
-                </div>
-
-                <button class="botao" type="submit" value="submit">Prosseguir para a próxima etapa ></button>
+                
+                <button class="botao" type="submit" value="submit" disabled="disabled">Prosseguir para a próxima etapa ></button>
 
             </div>
 

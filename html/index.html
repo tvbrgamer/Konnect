@@ -13,6 +13,7 @@
     <script defer src="js/modal.js"></script>
     <script defer src="js/modalScript.js"></script>
     <script defer src="js/geolocalizacao.js"></script>
+    <script defer src="js/valida.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +58,7 @@
             <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
             <div id="dados">
                 <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" oninput="habilitarBotao()"  maxlength="9" autocomplete="off">
+                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" oninput="habilitarBotao(), apenasNumeros(this)"  maxlength="9" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>

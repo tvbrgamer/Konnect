@@ -10,14 +10,14 @@ const habilitarBotao = () => {
     if (validarCep(inputCep)) {
       document.querySelector("#consultDisponibilidade").disabled = false;
       return;
+    } else {
+      document.querySelector("#consultDisponibilidade").disabled = true;
     }
-  } else {
-    document.querySelector("#consultDisponibilidade").disabled = true;
   }
 };
 
 const validarCep = (cep) => {
-  let test = /^[0-9]{5}-[0-9]{3}$/;
+  let test = /[0-9]{5}-[0-9]{3}/;
   cep = cep.replace(/^\s+|\s+$/g, "");
   if (test.test(cep)) {
     return true;
@@ -28,7 +28,7 @@ const validarCep = (cep) => {
 
 Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
-
+  // xxxxx-xx
   if (inputlength === 5) {
     Cep.value += "-";
   } else if (inputlength === 9){

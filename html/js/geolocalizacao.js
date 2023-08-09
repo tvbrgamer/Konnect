@@ -19,7 +19,7 @@ const watchID = () => {
 
 
 // Meu orgulho 🤠
-consultDisponibilidade.addEventListener("click", (e) => {
+consultDisponibilidade.addEventListener("click", e => {
   let pesquisaCep = Cep.value.replace("-", "");
   const opcoes = {
     method: "get",
