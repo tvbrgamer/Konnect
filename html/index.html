@@ -49,26 +49,23 @@
 
             <h2 id="updialogH2">Assinatura</h2>
 
-            <button id="updialogButton" onclick="Closemodal()" type="button"> X </button>
+            <button id="updialogButton" onclick="Closemodal(), Limpar()" type="button"> X </button>
 
         </div>
 
-        <form action="cadastro.html" id="bottomDialog">
+        <div id="bottomDialog">
             <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
-
-            <button id="consultAtual" class="consultarButton"> Consultar utilizando a localização atual</button>
-
             <div id="dados">
                 <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" onchange="habilitarBotao()" maxlength="10" autocomplete="off">
+                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" oninput="habilitarBotao()" maxlength="9" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
                 <div id="numeroInput" class="col-3">
-                    <input id="numeroInputt" class="effect-8" type="text" maxlength="10" placeholder="Nº:"
-                    onchange="habilitarBotao()" autocomplete="off">
+                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"
+                    oninput="habilitarBotao()" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
@@ -88,7 +85,7 @@
                 </div>
             </div>
 
-        </form>
+        </div>
 
     </dialog>
 
@@ -117,7 +114,7 @@
                     <h3>A partir de:</h3>
                     <h1>R$ 39,90/mês</h1>
                 </div>
-                <button onclick="Showmodal()" class="buttonAssinar" id="button39">
+                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button39" name="39">
                     Assinar
                 </button>
             </div>
@@ -140,7 +137,7 @@
                     <h3>A partir de:</h3>
                     <h1>R$ 69,90/mês</h1>
                 </div>
-                <button onclick="Showmodal()" class="buttonAssinar" id="button69">
+                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button69" name="69">
                     Assinar
                 </button>
             </div>
@@ -163,7 +160,7 @@
                     <h3>A partir de:</h3>
                     <h1>R$ 169,90/mês</h1>
                 </div>
-                <button onclick="Showmodal()" class="buttonAssinar" id="button169">
+                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button169" name="169">
                     Assinar
                 </button>
             </div>

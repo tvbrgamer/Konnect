@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/borda.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
+    <script defer src="js/cadastro.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
     <title>Konnect</title>
 </head>
 
-<body>
+<body onload="recuperarDados()">
     <header>
         <div id="Logo">
             <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
@@ -125,7 +126,7 @@
             <div id="bottom">
                 <div id="planoNome">
                     <img id="Internet" src="./imagens/Internet.png" alt="internet">
-                    <h3 id="planoTxt">Placeholder Mega</h3>
+                    <h3 id="planoTxt"><span id="phMega">Placeholder</span> Mega</h3>
                 </div>
                 <div id="planoBeneficio">Wifi Grátis</div>
 
