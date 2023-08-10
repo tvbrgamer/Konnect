@@ -1,3 +1,79 @@
-Main{
+#container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #aed9ff;
+  width: 67%;
+  max-width: 1030px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
 
+section {
+  width: 100vw;
+  display: flex;
+  /* flex-wrap: no-wrap; */
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 2%;
+}
+
+.card {
+  width: 20%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: 3px solid #000;
+  background: #64cbf8;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+#foundersTxt {
+  padding: 15px;
+  font-size: 35px;
+}
+
+.card p {
+  font-size: 150%;
+  padding: 13px;
+}
+
+.cardImg {
+  border-radius: 17px 17px 0 0;
+  height: 300px;
+  width: 100%;
+  border-bottom: 3px solid black;
+}
+
+#jonathanImg {
+  background: url(../imagens/Placeholder.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+#fernandoImg {
+  background: url(../imagens/Placeholder.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+#fabricioImg {
+  background: url(../imagens/fabricio.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }

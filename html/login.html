@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/borda.css">
     <link rel="stylesheet" href="css/fontes.css">
-    <link rel="stylesheet" href="css/sobrenos.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
 
@@ -38,27 +38,36 @@
         </div>
     </header>
 
+    
     <div id="container">
-        <div id="foundersTxt"><p>Nossos fundadores<p></div>
-        
-        <section>
-
-            <div class="card" id="jonathan">
-                <div class="cardImg" id="jonathanImg"></div>
-                <p>Jonathan</p>
-            </div>
-            <div class="card" id="Fernando">
-                <div class="cardImg" id="fernandoImg"></div>
-                <p>Fernando</p>
-            </div>
-            <div class="card" id="Fabricio">
-                <div class="cardImg" id="fabricioImg"></div>
-                <p>Fabricio</p>
-            </div>
-            
+        <div id="loginTxt-container">
+            <p>Login</p>
         </div>
-    </div>
+        <section>
+            <div id="dados">
+                
+                <div id="cepInput" class="col-3">
+                    <input id="cepInputt" class="effect-8" type="text" placeholder="e-mail:"
+                        autocomplete="off">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
 
+                <div id="numeroInput" class="col-3">
+                    <input id="numeroInputt" class="effect-8" type="password" placeholder="Senha:"
+                        autocomplete="off">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+
+                <button disabled="disabled" type="submit" id="consultDisponibilidade" class="consultarButton"
+                    type="button">Consultar
+                    disponibilidade</button>
+            </div>
+        </section>
+    </div>
     <footer>
         <div id="footerA">
             <a href="">Política de privacidade</a>

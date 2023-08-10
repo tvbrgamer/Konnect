@@ -57,6 +57,7 @@ header {
 #headerButton {
   margin-top: auto;
   margin-bottom: auto;
+  margin-right: 1%;
   width: 600px;
   height: 50px;
   display: flex;
