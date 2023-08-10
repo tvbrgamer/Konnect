@@ -34,7 +34,7 @@ const validarDate = date => {
 }
 
 const habilitarBotao = () => {
-    if (cpf.value.length === 14 && nome.value.length >= 3 && email.value.length === 3 && rg.value.length === 12) {
+    if (cpf.value.length === 14 && nome.value.length >= 3 && email.value.length >= 3 && rg.value.length === 12) {
         if((validarCpf(cpf.value)) && (validarCpf(rg.value)) && (validarDate(date.value))) {
             document.querySelector(".botao").disabled = false
             return;
@@ -84,3 +84,14 @@ date.addEventListener('blur', e => {
         date.value = ""
     }
 })
+
+const keyboard = (event) => {
+    if(event.keyCode === 13) {
+      botao.click();
+    }
+}
+
+cpf.addEventListener('keypress', keyboard)
+email.addEventListener('keypress', keyboard)
+rg.addEventListener('keypress', keyboard)
+nome.addEventListener('keypress', keyboard)
