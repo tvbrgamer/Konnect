@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/borda.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
+    <script defer src="js/endereco.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
     <title>Konnect</title>
 </head>
 
-<body>
+<body onload="recuperarDados()">
     <header>
         <div id="Logo">
             <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
@@ -28,7 +29,7 @@
             <a href="">
                 <div id="atendimento">Atendimento</div>
             </a>
-            <a href="">
+            <a href="sobrenos.html">
                 <div id="sobre">Sobre Nós</div>
             </a>
             <a href="" class="login">
@@ -67,7 +68,7 @@
 
             <div class="column">
                 <div id="" class="col-3">
-                    <input id="" class="effect-8" type="text" maxlength="10" placeholder="Complemento:">
+                    <input id="complemento" class="effect-8" type="text" placeholder="Complemento:" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
@@ -124,11 +125,11 @@
             <div id="bottom">
                 <div id="planoNome">
                     <img id="Internet" src="./imagens/Internet.png" alt="internet">
-                    <h3 id="planoTxt">Placeholder Mega</h3>
+                    <h3 id="planoTxt"><span id="phMega">Placeholder</span> Mega</h3>
                 </div>
                 <div id="planoBeneficio">Wifi Grátis</div>
 
-                <div id="Price">R$69,99</div>
+                <div id="Price">R$00,00</div>
 
                 <div id="taxas">
                     <div id="taxa">

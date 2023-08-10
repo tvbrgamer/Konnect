@@ -56,7 +56,7 @@ li {
 }
 
 .doneLi {
-    background: #4DA2F9 url(/imagens/done.png) no-repeat center 5px;
+    background: #4DA2F9 url(../imagens/done.png) no-repeat center 5px;
     width: 30px;
     height: 30px;
     border-radius: 50px;

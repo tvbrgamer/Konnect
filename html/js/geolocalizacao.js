@@ -30,7 +30,8 @@ consultDisponibilidade.addEventListener("click", e => {
     .then((response) => {
       response.json().then((data) => {
         if (!data.erro) {
-          localStorage.setItem("endereco", data);
+          console.log(data)
+          localStorage.setItem("endereco", JSON.stringify(data));
           localStorage.setItem("numero", Numero.value);
           window.location.href = "./cadastro.html";
         } else {

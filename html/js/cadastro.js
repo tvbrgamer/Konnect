@@ -77,7 +77,7 @@ date.addEventListener('blur', e => {
     let testData = `${partesData[2]}`
     let dataTest = new Date();
     dataTest = dataTest.toString().split(" ")
-    if ((dataTest[3] - testData) >= 18 && (dataTest[3] - testData) <= 100) {
+    if ((dataTest[3] - testData) >= 18 && (dataTest[3] - testData) <= 125) {
         habilitarBotao()
     } else {
         alert("Idade inválida")
