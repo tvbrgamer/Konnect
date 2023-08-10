@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/borda.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/fontes.css">
+
+
+    <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
+    <script defer src="js/endereco.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <title>Konnect</title>
+</head>
+
+<body onload="recuperarDados()">
+    <header>
+        <div id="Logo">
+            <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
+        </div>
+        <div id="headerButton">
+            <a href="">
+                <div id="atendimento">Atendimento</div>
+            </a>
+            <a href="sobrenos.html">
+                <div id="sobre">Sobre Nós</div>
+            </a>
+            <a href="" class="login">
+                <div class="login">
+                    <img src="imagens/login.png" alt="login icone" width="39px" height="39px" id="imgLogin">
+                    <span id="loginTxt">Login</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div id="cadastro">
+        <div id="marcadores">
+            <ul>
+
+                <li>
+                    <div class="doneLi"></div>
+                    Dados do cadastro
+                </li>
+                <div class="linhapronta"></div>
+
+                <li>
+                    <div class="uncheckedLi"></div>
+                    Endereço
+                </li>
+                <div class="linha"></div>
+
+                <li>
+                    <div class="checkedLi"></div>
+                    Forma de Pagamento
+                </li>
+            </ul>
+
+        </div>
+        <form action="pagamento.html" method="get" id="dados">
+
+            <div class="column">
+                <div id="" class="col-3">
+                    <input id="complemento" class="effect-8" type="text" placeholder="Complemento:" autocomplete="off">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+
+                <div id="dataDiv">
+                    <h2>Agende sua instalação</h2>
+
+                    <div id="radio">
+
+                        <input type="radio" name="horariodia" id="manha">
+                        <label for="manha">Manhã</label>
+
+                        <input type="radio" name="horariodia" id="tarde">
+                        <label for="tarde">Tarde</label>
+
+                    </div>
+
+                    <div id="" class="col-3">
+                        <input id="data" class="effect-8" type="date">
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
+
+                </div>
+                    <button type="button" class="botao" onclick="history.back()">
+                        < Voltar para a etapa anterior</button>
+
+            </div>
+
+            <div class="column">
+                <div id="" class="col-3">
+                    <input id="" class="effect-8" type="text" placeholder="Referência:">
+                    <span class="focus-border">
+                        <i></i>
+                    </span>
+                </div>
+
+
+                <button class="botao" type="submit" value="submit">Prosseguir para a próxima etapa ></button>
+
+            </div>
+
+        </form>
+
+        <div id="plano">
+
+            <div id="title">
+                <img id="titleImg" src="./imagens/carrinho.png" alt="carrinho">
+                <h3>Plano selecionado</h3>
+            </div>
+
+            <div id="bottom">
+                <div id="planoNome">
+                    <img id="Internet" src="./imagens/Internet.png" alt="internet">
+                    <h3 id="planoTxt"><span id="phMega">Placeholder</span> Mega</h3>
+                </div>
+                <div id="planoBeneficio">Wifi Grátis</div>
+
+                <div id="Price">R$00,00</div>
+
+                <div id="taxas">
+                    <div id="taxa">
+                        <div class="taxa">Taxa de instalação</div>
+                        <div class="taxa">Taxa de adesão</div>
+                    </div>
+                    <div id="taxaPreco">
+                        <div class="taxaPreco">Grátis</div>
+                        <div class="taxaPreco">Grátis</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div id="footerA">
+            <a href="">Política de privacidade</a>
+            <a href="">Portal de privacidade</a>
+        </div>
+        <div id="direitosFooter">© 2023 Konnect. Todos os direitos reservados. CNPJ: 25.940.934/0001-34 - Rua
+            Coronel
+            Alencastro, 48 - Rio de Janeiro - RJ</div>
+    </footer>
+
+</body>
