@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="css/borda.css">
     <link rel="stylesheet" href="css/fontes.css">
     <link rel="stylesheet" href="css/login.css">
+    <script defer src="js/show.js"></script>
 
     <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Konnect</title>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
             <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
         </div>
         <div id="headerButton">
-            <a href="">
+            <a href="aindanfiz.html">
                 <div id="atendimento">Atendimento</div>
             </a>
             <a href="sobrenos.html">
@@ -44,34 +45,32 @@
             <p>Login</p>
         </div>
         <section>
-            <div id="dados">
+            <form id="dados">
                 
                 <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" placeholder="e-mail:"
-                        autocomplete="off">
+                    <input id="emailInput" class="effect-8" required type="email" placeholder="E-mail:" autocomplete="on">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
                 <div id="numeroInput" class="col-3">
-                    <input id="numeroInputt" class="effect-8" type="password" placeholder="Senha:"
-                        autocomplete="off">
+                    <input id="senhaInput" class="effect-8" required type="password" placeholder="Senha:" autocomplete="off">
+                    <button type="button" id="olho"> &nbsp; </button>
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
-                <button disabled="disabled" type="submit" id="consultDisponibilidade" class="consultarButton"
-                    type="button">Consultar
-                    disponibilidade</button>
-            </div>
+                <button type="submit" id="logarButton" class="loginButton" type="button">Logar</button>
+            
+            </form>
         </section>
     </div>
     <footer>
         <div id="footerA">
-            <a href="">Política de privacidade</a>
-            <a href="">Portal de privacidade</a>
+            <a href="aindanfiz.html">Política de privacidade</a>
+            <a href="aindanfiz.html">Portal de privacidade</a>
         </div>
         <div id="direitosFooter">© 2023 Konnect. Todos os direitos reservados. CNPJ: 25.940.934/0001-34 - Rua Coronel
             Alencastro, 48 - Rio de Janeiro - RJ</div>

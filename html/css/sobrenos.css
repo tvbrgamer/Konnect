@@ -13,7 +13,7 @@
   margin-right: auto;
   padding-bottom: 1%;
   margin-top: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 150px;
 }
 
 section {
@@ -45,7 +45,8 @@ p {
 
 .card p {
   font-size: 150%;
-  padding: 13px;
+  padding: 13px 0;
+  text-align: center;
 }
 
 .cardImg {
@@ -62,7 +63,7 @@ p {
 }
 
 #fernandoImg {
-  background: url(../imagens/Placeholder.jpg);
+  background: url(../imagens/fernando.png);
   background-size: cover;
   background-position: center center;
 }

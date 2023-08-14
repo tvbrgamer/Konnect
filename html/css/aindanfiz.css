@@ -1,0 +1,24 @@
+#saulGoodman {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  height: 80%;
+  background: url(../imagens/saul-goodman.gif) center center no-repeat;
+  background-size: cover;
+}
+
+#nfiz{
+  margin-top: 1%;
+  text-align: center;
+  color: white;
+  font-size: 300%;
+}
+
+#voltar{
+  z-index: 1;
+}
