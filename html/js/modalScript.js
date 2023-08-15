@@ -2,17 +2,20 @@ const Cep = document.querySelector("#cepInputt");
 const Numero = document.querySelector("#numeroInputt");
 const chkNPN = document.querySelector("#chkNPN");
 const botaoFechar = document.querySelector("#updialogbutton");
+var desativado = false;
 
 const habilitarBotao = () => {
   const inputCep = document.querySelector("#cepInputt").value;
   const inputNumero = document.querySelector("#numeroInputt").value;
-  if (inputCep.length == 9 && inputNumero.length >= 1) {
+  if (inputCep.length == 9 && ((inputNumero.length >= 1) || (desativado == true) )) {
     if (validarCep(inputCep)) {
       document.querySelector("#consultDisponibilidade").disabled = false;
       return;
     } else {
       document.querySelector("#consultDisponibilidade").disabled = true;
     }
+  } else {
+    document.querySelector("#consultDisponibilidade").disabled = true; 
   }
 };
 
@@ -38,11 +41,15 @@ Cep.addEventListener("input", () => {
 
 const ToggleNum = () => {
   if (chkNPN.checked) {
+    desativado = true;
     Numero.disabled = true;
     Numero.value = 0;
   } else {
+    desativado = false
     Numero.disabled = false;
+    Numero.value = null;
   }
+  habilitarBotao();
 };
 
 const Limpar = () => {
@@ -61,13 +68,13 @@ const Valor = valor => {
         localStorage.setItem("mega", "500")
         localStorage.setItem("valor", "R$ 169,90")
     }
-}
+};
 
 const keyboard = (event) => {
   if(event.keyCode === 13) {
     consultDisponibilidade.click();
   }
-}
+};
 
 Cep.addEventListener('keypress', keyboard)
 Numero.addEventListener('keypress', keyboard)

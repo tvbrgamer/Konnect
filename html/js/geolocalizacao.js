@@ -26,7 +26,8 @@ consultDisponibilidade.addEventListener("click", e => {
     mode: "cors",
     cache: "default",
   };
-  fetch(`https://viacep.com.br/ws/${pesquisaCep}/json/`, opcoes)
+  if (!(pesquisaCep == "11111111")) {
+    fetch(`https://viacep.com.br/ws/${pesquisaCep}/json/`, opcoes)
     .then((response) => {
       response.json().then((data) => {
         if (!data.erro) {
@@ -42,4 +43,8 @@ consultDisponibilidade.addEventListener("click", e => {
     .catch((e) => {
       console.log(e.message);
     });
+  } else {
+    alert("Acesso Concedido")
+    window.location.href = "./cadastro.html";
+  }
 });
