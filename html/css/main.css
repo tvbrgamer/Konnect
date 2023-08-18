@@ -148,15 +148,22 @@ dialog::backdrop {
 section#cardArea {
   font-family: 'Lato', sans-serif;
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
+  justify-content:center;
   background-color: #AED9FF;
   margin-right: auto;
   margin-left: auto;
   width: 98%;
-  max-width: 1165px;
-  height: 434px;
+  max-width: 1020px;
+  height: 100%;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  section#cardArea {
+    flex-wrap: wrap;
+    width: min-content;
+    padding: 1%;
+  }
 }
 
 .cardBox {
@@ -164,10 +171,11 @@ section#cardArea {
   border-radius: 20px;
   border: 3px solid #000;
   background: #64CBF8;
+  min-width: 280px;
   width: 30%;
   max-width: 325px;
   height: 408px;
-  margin: 10px;
+  margin: 1%;
 }
 
 .cardItem {
@@ -175,8 +183,8 @@ section#cardArea {
 }
 
 .cardItem .txtArea {
-  margin: 22px auto auto auto;
-  width: 287px;
+  width: 100%;
+  padding: 4%;
 }
 
 .cardItem h1 {
@@ -201,15 +209,16 @@ section#cardArea {
 }
 
 .cardBottom {
-  position: relative;
+  position: absolute;
+  bottom: -3px;
+  left: -3px;
   border-radius: 20px;
   border: 3px solid #000;
   box-shadow: 0px -2px 5px 0px #000;
   background: #64CBF8;
-  width: 104%;
+  width: 102%;
   max-width: 325px;
   height: 145px;
-  left: -3px;
 }
 
 .cardBottom .txtArea {
@@ -253,37 +262,47 @@ section#cardArea {
 }
 
 
+@media screen and (min-width: 900px) {
+  .txtArea h1 {
+    font-size: 25px ;
+  }
+
+  .txtArea h3{
+    font-size: 10px;
+  }
+}
 
 /* Seção do time de e-sports */
 
 section#ESports {
   margin-top: 57px;
-  height: 586px;
+  height: 37vh;
+  max-height: 657px;
   background-color: #171115;
-  margin-bottom: 35px;
+  margin-bottom: 4%;
 }
+
 
 #txtArea {
   float: left;
   color: #FFF;
   font-family: 'Press Start 2P', cursive;
   width: 50%;
-  height: 183px;
-  margin: 52px 25px 142px 5%;
+  height: 50%;
+  margin: 10% 5% 0px 5%;
 }
 
 #imgESports {
   margin: 19px auto 68px 20px;
-  width: 30%;
-  max-width: 543px;
+  height: 90%;
 }
 
 
 section#ESports h1 {
-  font-size: 2em;
+  font-size: 1.7vw;
 }
 
 section#ESports h3 {
-  margin: 140px auto auto auto;
-  font-size: 1em;
+  margin: 20% auto auto auto;
+  font-size: 0.8vw;
 }
