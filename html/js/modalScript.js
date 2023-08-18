@@ -7,7 +7,7 @@ var desativado = false;
 const habilitarBotao = () => {
   const inputCep = document.querySelector("#cepInputt").value;
   const inputNumero = document.querySelector("#numeroInputt").value;
-  if (inputCep.length == 9 && ((inputNumero.length >= 1) || (desativado == true) )) {
+  if (inputCep.length == 9 && (inputNumero.length >= 1 || desativado == true)) {
     if (validarCep(inputCep)) {
       document.querySelector("#consultDisponibilidade").disabled = false;
       return;
@@ -15,7 +15,7 @@ const habilitarBotao = () => {
       document.querySelector("#consultDisponibilidade").disabled = true;
     }
   } else {
-    document.querySelector("#consultDisponibilidade").disabled = true; 
+    document.querySelector("#consultDisponibilidade").disabled = true;
   }
 };
 
@@ -31,10 +31,7 @@ const validarCep = (cep) => {
 
 Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
-  // xxxxx-xx
-  if (inputlength === 5) {
-    Cep.value += "-";
-  } else if (inputlength === 9){
+  if (inputlength === 9) {
     Numero.focus();
   }
 });
@@ -45,7 +42,7 @@ const ToggleNum = () => {
     Numero.disabled = true;
     Numero.value = 0;
   } else {
-    desativado = false
+    desativado = false;
     Numero.disabled = false;
     Numero.value = null;
   }
@@ -57,24 +54,33 @@ const Limpar = () => {
   Numero.value = "";
 };
 
-const Valor = valor => {
-    if (valor == "39"){
-        localStorage.setItem("mega", "75")
-        localStorage.setItem("valor", "R$ 39,90")
-    } else if (valor == "69") {
-        localStorage.setItem("mega", "100")
-        localStorage.setItem("valor", "R$ 69,90")
-    } else if (valor == "169") {
-        localStorage.setItem("mega", "500")
-        localStorage.setItem("valor", "R$ 169,90")
-    }
+const Valor = (valor) => {
+  if (valor == "39") {
+    localStorage.setItem("mega", "75");
+    localStorage.setItem("valor", "R$ 39,90");
+  } else if (valor == "69") {
+    localStorage.setItem("mega", "100");
+    localStorage.setItem("valor", "R$ 69,90");
+  } else if (valor == "169") {
+    localStorage.setItem("mega", "500");
+    localStorage.setItem("valor", "R$ 169,90");
+  }
 };
 
 const keyboard = (event) => {
-  if(event.keyCode === 13) {
+  if (event.keyCode === 13) {
     consultDisponibilidade.click();
   }
 };
 
-Cep.addEventListener('keypress', keyboard)
-Numero.addEventListener('keypress', keyboard)
+Cep.addEventListener("keypress", keyboard);
+Numero.addEventListener("keypress", keyboard);
+
+// Mascara do Cep
+document.addEventListener('DOMContentLoaded', () => {
+  new Cleave('#cepInputt', {
+      delimiters: ['-'],
+      blocks: [5, 3],
+      numericOnly: true
+  });
+})

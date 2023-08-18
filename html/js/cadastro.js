@@ -46,28 +46,6 @@ const habilitarBotao = () => {
     }
 }
 
-const Cpfmask = () => {
-    apenasNumeros(cpf)
-    let cpflength = cpf.value.length
-    // xxx.xxx.xxx-xx
-    if (cpflength === 3 || cpflength === 7){
-        cpf.value += ".";
-    } else if (cpflength === 11) {
-        cpf.value += "-"
-    }
-}
-
-const rgMask = () => {
-    apenasNumeros(rg)
-    let rgLength = rg.value.length
-    // xx.xxx.xxx-x
-    if (rgLength === 2 || rgLength === 6) {
-        rg.value += "."
-    } else if (rgLength === 10) {
-        rg.value += "-"
-    }
-}
-
 date.addEventListener('blur', e => {
     date.type = 'text'
     date.value = date.value.replace(/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/, (m, v1, v2, v3) => {
@@ -95,3 +73,34 @@ cpf.addEventListener('keypress', keyboard)
 email.addEventListener('keypress', keyboard)
 rg.addEventListener('keypress', keyboard)
 nome.addEventListener('keypress', keyboard)
+
+// Mascára de Cpf
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Cleave('#cpf', {
+        delimiters: ['.', '.', '-'],
+        blocks: [3, 3, 3, 2],
+        numericOnly: true
+    });
+})
+
+//Mascára do RG
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Cleave('#rg', {
+        delimiters: ['.', '.', '-'],
+        blocks: [2, 3, 3, 1],
+        numericOnly: true
+    });
+})
+
+//Mascára do Telefone
+
+document.addEventListener('DOMContentLoaded', () => {
+    new Cleave('#tel', {
+        delimiters: ['(', ') ', ' ','-'],
+        blocks: [0, 2, 1, 4, 4],
+        numericOnly: true,
+    
+    });
+})

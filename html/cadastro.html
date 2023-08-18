@@ -17,6 +17,7 @@
     <script defer src="js/cadastro.js"></script>
     <script defer src="js/valida.js"></script>
     <script defer src="js/cpf.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +74,7 @@
 
             <div class="column">
                 <div id="" class="col-3">
-                    <input id="cpf" class="effect-8" type="text" maxlength="14" placeholder="CPF:" autocomplete="off" oninput="Cpfmask(), habilitarBotao()">
+                    <input id="cpf" class="effect-8" type="text" placeholder="CPF:" autocomplete="off" oninput="habilitarBotao()">
                     <span class="focus-border">
                         <i></i>
                     </span>
@@ -102,14 +103,14 @@
                 </div>
 
                 <div id="" class="col-3">
-                    <input id="tel" class="effect-8" type="tel" placeholder="Telefone:" autocomplete="off" oninput="habilitarBotao()">
+                    <input id="tel" class="effect-8" type="text" placeholder="Telefone:" autocomplete="off" oninput="habilitarBotao()">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
                 
                 <div id="" class="col-3">
-                    <input id="rg" class="effect-8" type="text" maxlength="12" placeholder="RG:" autocomplete="off" oninput="habilitarBotao(), rgMask()" title="Não consigo pensar em nada">
+                    <input id="rg" class="effect-8" type="text" placeholder="RG:" autocomplete="off" oninput="habilitarBotao()" title="Não consigo pensar em nada">
                     <span class="focus-border">
                         <i></i>
                     </span>
