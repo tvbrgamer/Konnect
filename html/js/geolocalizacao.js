@@ -1,6 +1,5 @@
 const consultDisponibilidade = document.querySelector("#consultDisponibilidade");
 
-
 /*
 const success = (pos) => {
   localStorage.setItem("latitude", pos.coords.latitude);
@@ -16,10 +15,8 @@ const watchID = () => {
   });
 }; */
 
-
-
-// Meu orgulho 🤠
-consultDisponibilidade.addEventListener("click", e => {
+// Meu orgulho 🤠 -> A partir do Cep informado, utiliza a web api Viacep para achar o endereço
+consultDisponibilidade.addEventListener("click", (e) => {
   let pesquisaCep = Cep.value.replace("-", "");
   const opcoes = {
     method: "get",
@@ -28,23 +25,23 @@ consultDisponibilidade.addEventListener("click", e => {
   };
   if (!(pesquisaCep == "11111111")) {
     fetch(`https://viacep.com.br/ws/${pesquisaCep}/json/`, opcoes)
-    .then((response) => {
-      response.json().then((data) => {
-        if (!data.erro) {
-          console.log(data)
-          localStorage.setItem("endereco", JSON.stringify(data));
-          localStorage.setItem("numero", Numero.value);
-          window.location.href = "./cadastro.html";
-        } else {
-          alert("Deu erro paizao!");
-        }
+      .then((response) => {
+        response.json().then((data) => {
+          if (!data.erro) {
+            console.log(data);
+            localStorage.setItem("endereco", JSON.stringify(data));
+            localStorage.setItem("numero", Numero.value);
+            window.location.href = "./cadastro.html";
+          } else {
+            alert("Deu erro paizao!");
+          }
+        });
+      })
+      .catch((e) => {
+        console.log(e.message);
       });
-    })
-    .catch((e) => {
-      console.log(e.message);
-    });
   } else {
-    alert("Acesso Concedido")
+    alert("Acesso Concedido");
     window.location.href = "./cadastro.html";
   }
 });
