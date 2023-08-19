@@ -19,6 +19,12 @@
   font-size: 300%;
 }
 
+#audio{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 #voltar{
   z-index: 1;
 }

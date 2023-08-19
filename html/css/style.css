@@ -3,13 +3,19 @@
   padding: 0;
 }
 
-body {
+html {
   min-width: 100vw;
   min-height: 100vh;
-  background: #D7ECFF;
+}
+
+body {
+  background: linear-gradient(180deg, rgb(215, 236, 255) 0%, rgb(114, 178, 235) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
   overflow-x: hidden;
   position: absolute;
+  padding: 100%;
 }
 
 a {
@@ -20,6 +26,8 @@ a {
 /* Cabeçalho */
 
 header {
+  position: fixed;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,6 +132,8 @@ header {
 /* footer / rodapé */
 
 footer {
+  position: absolute;
+  bottom: 0;
   padding: 30px;
   width: 100%;
   height: 100%;
@@ -144,6 +154,7 @@ footer a,
 }
 
 @media screen and (max-width: 600px) {
+
   footer a,
   #direitosFooter {
     font-size: 3vw;
