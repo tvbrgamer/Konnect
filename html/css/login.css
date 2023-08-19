@@ -7,6 +7,7 @@
   align-items: center;
   border-radius: 20px;
   background-color: #aed9ff;
+  min-width: 260px;
   width: 50%;
   max-width: 800px;
   margin-left: auto;
@@ -94,10 +95,4 @@ p {
   background-color: #38db97;
   transition: 0.4s;
   cursor: pointer;
-}
-
-
-footer {
-  position: absolute;
-  bottom: 0;
 }

@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
   position: absolute;
   padding: 100%;
+  min-height: 100%;
 }
 
 a {
@@ -26,7 +27,8 @@ a {
 /* Cabeçalho */
 
 header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 99;
   display: flex;
   justify-content: space-between;

@@ -129,7 +129,7 @@ dialog::backdrop {
   width: 600px;
   height: 80px;
   text-align: center;
-  margin-top: 195px;
+  margin-top: 105px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 89px;
@@ -272,7 +272,7 @@ section#ESports {
   height: 55vh;
   max-height: 657px;
   background-color: rgba(115, 115, 115, 0.46);
-  margin-bottom: 4%;
+  margin-bottom: clamp(150px, 25vh, 990px);
 }
 
 #txtArea {
@@ -284,7 +284,7 @@ section#ESports {
 
 #imgESports {
   border-radius: 10%;
-  height: 80%;
+  max-height: 80%;
   margin-right: 5%;
 }
 

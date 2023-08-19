@@ -1,3 +1,11 @@
+body {
+  background: linear-gradient(180deg, rgb(215, 236, 255) 0%, rgb(114, 178, 235) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+
 #saulGoodman {
   position: absolute;
   top: 50%;
@@ -21,6 +29,8 @@
 
 #audio{
   position: absolute;
+  width: 30%;
+  max-width: 300px;
   bottom: 0;
   right: 0;
 }
