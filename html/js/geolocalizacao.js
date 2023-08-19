@@ -1,19 +1,11 @@
 const consultDisponibilidade = document.querySelector("#consultDisponibilidade");
+let effect = document.querySelector(".effect-8~.focus-border")
 
-/*
-const success = (pos) => {
-  localStorage.setItem("latitude", pos.coords.latitude);
-  localStorage.setItem("longitude", pos.coords.longitude);
-  window.location.href = "./cadastro.html";
-};
-const error = (err) => console.log(err.code);
 
-const watchID = () => {
-  navigator.geolocation.watchPosition(success, error, {
-    enableHighAccuracy: true,
-    timeout: 10000,
-  });
-}; */
+
+const alertColor = {
+
+}
 
 // Meu orgulho 🤠 -> A partir do Cep informado, utiliza a web api Viacep para achar o endereço
 consultDisponibilidade.addEventListener("click", (e) => {
@@ -33,12 +25,19 @@ consultDisponibilidade.addEventListener("click", (e) => {
             localStorage.setItem("numero", Numero.value);
             window.location.href = "./cadastro.html";
           } else {
-            alert("Deu erro paizao!");
+            effect.style.setProperty("--effectwow", "red")
+            Cep.title = "CEP inválido"
+            Cep.value = ""
+            habilitarBotaom()
+            Cep.focus()
           }
         });
       })
       .catch((e) => {
         console.log(e.message);
+        effect.style.setProperty("--effectwow", "red")
+        Cep.title = "Insira um CEP"
+        Cep.focus()
       });
   } else {
     alert("Acesso Concedido");

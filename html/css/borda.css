@@ -251,7 +251,7 @@ input[type="number"]::-webkit-inner-spin-button {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #3399FF;
+    background-color: var(--effectwow, #3399FF);
     transition: 0.3s;
 }
 
@@ -270,7 +270,7 @@ input[type="number"]::-webkit-inner-spin-button {
     left: 0;
     width: 2px;
     height: 0;
-    background-color: #3399FF;
+    background-color: var(--effectwow, #3399FF);
     transition: 0.4s;
 }
 

@@ -5,7 +5,7 @@ const botaoFechar = document.querySelector("#updialogbutton");
 var desativado = false;
 
 // Valida se todos os inputs estão corretos e então habilita o botão
-const habilitarBotao = () => {
+const habilitarBotaom = () => {
   const inputCep = document.querySelector("#cepInputt").value;
   const inputNumero = document.querySelector("#numeroInputt").value;
   if (inputCep.length == 9 && (inputNumero.length >= 1 || desativado == true)) {
@@ -31,9 +31,12 @@ const validarCep = (cep) => {
   }
 };
 
-// Faz com que ao terminar de digitar o cep, o foco vá para o input de número
+// Faz com que ao terminar de digitar o cep, o foco vá para o input de número e retira a borda vermelha de erro
 Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
+  Cep.style.borderColor = "#ccc";
+  effect.style.setProperty("--effectwow", "#3399FF")
+  Cep.title = "";
   if (inputlength === 9) {
     Numero.focus();
   }
@@ -50,11 +53,12 @@ const ToggleNum = () => {
     Numero.disabled = false;
     Numero.value = null;
   }
-  habilitarBotao();
+  habilitarBotaom();
 };
 
 // Limpa o inputs ao fechar o modal
 const Limpar = () => {
+  effect.style.setProperty("--effectwow", "#3399FF")
   Cep.value = "";
   Numero.value = "";
   chkNPN.checked = false;
@@ -77,7 +81,10 @@ const Valor = (valor) => {
 
 // permite o click no botão utilizando o enter
 const keyboard = (event) => {
-  if (event.keyCode === 13 && document.querySelector("#consultDisponibilidade").disabled == false) {
+  if (
+    event.keyCode === 13 &&
+    document.querySelector("#consultDisponibilidade").disabled == false
+  ) {
     consultDisponibilidade.click();
   }
 };
