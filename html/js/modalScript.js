@@ -52,6 +52,8 @@ const ToggleNum = () => {
 const Limpar = () => {
   Cep.value = "";
   Numero.value = "";
+  chkNPN.checked = false;
+  Numero.disabled = false;
 };
 
 const Valor = (valor) => {
