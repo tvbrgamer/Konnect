@@ -1,2 +1,2 @@
 # Konnect
- Mini-Projeto de Escola
+ Mini-Projeto de Escola :)

@@ -191,7 +191,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .effect-8,
 .effect-9 {
     border: 1px solid #ccc;
-    padding: 7px 14px 9px;
+    padding: 10px 14px 9px;
     transition: 0.4s;
 }
 
