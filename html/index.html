@@ -27,7 +27,7 @@
     <title>Konnect</title>
 </head>
 
-<body class="scroll">
+<body class="scroll" onload="ToggleNum()">
     <header>
         <div id="Logo">
             <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
@@ -62,14 +62,14 @@
             <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
             <div id="dados">
                 <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" placeholder="CEP:" oninput="habilitarBotaom()" autocomplete="off">
+                    <input id="cepInputt" class="effect-8" type="text" maxlength="9" placeholder="CEP:" oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
                 <div id="numeroInput" class="col-3">
-                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"oninput="habilitarBotaom()" autocomplete="off">
+                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
