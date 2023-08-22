@@ -44,9 +44,6 @@ consultDisponibilidade.addEventListener("click",  e => {
     .then(ev => {
       window.location.href = "./cadastro.html";
     })
-    .catch(e => {
-      window.location.href = "./cadastro.html";
-    })
   }
 });
 
