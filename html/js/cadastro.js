@@ -174,7 +174,10 @@ date.addEventListener("blur", (e) => {
   if (dataTest[3] - testData >= 18 && dataTest[3] - testData <= 125) {
     habilitarBotao();
   } else {
-    alert("Idade inválida");
+    
+    let effect = document.querySelector(".effect-8#data~.focus-border");
+    console.log(effect)
+    effect.style.setProperty("--effectwow", "red");
     date.value = "";
   }
 });

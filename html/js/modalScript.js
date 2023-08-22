@@ -2,6 +2,7 @@ const Cep = document.querySelector("#cepInputt");
 const Numero = document.querySelector("#numeroInputt");
 const chkNPN = document.querySelector("#chkNPN");
 const botaoFechar = document.querySelector("#updialogbutton");
+const effectCep = document.querySelector(".effect-8#cepInputt~.focus-border");
 var desativado = false;
 
 // Valida se todos os inputs estão corretos e então habilita o botão
@@ -35,7 +36,7 @@ const validarCep = (cep) => {
 Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
   Cep.style.borderColor = "#ccc";
-  effect.style.setProperty("--effectwow", "#3399FF")
+  effectCep.style.setProperty("--effectwow", "#3399FF");
   Cep.title = "";
   if (inputlength === 9) {
     Numero.focus();
@@ -58,7 +59,7 @@ const ToggleNum = () => {
 
 // Limpa o inputs ao fechar o modal
 const Limpar = () => {
-  effect.style.setProperty("--effectwow", "#3399FF")
+  effectCep.style.setProperty("--effectwow", "#3399FF");
   Cep.value = "";
   Numero.value = "";
   chkNPN.checked = false;

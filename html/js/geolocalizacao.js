@@ -1,8 +1,10 @@
+
+
 const consultDisponibilidade = document.querySelector("#consultDisponibilidade");
-let effect = document.querySelector(".effect-8~.focus-border");
+
 
 // Meu orgulho 🤠 -> A partir do Cep informado, utiliza a web api Viacep para achar o endereço
-consultDisponibilidade.addEventListener("click", (e) => {
+consultDisponibilidade.addEventListener("click",  e => {
   let pesquisaCep = Cep.value.replace("-", "");
   const opcoes = {
     method: "get",
@@ -19,7 +21,7 @@ consultDisponibilidade.addEventListener("click", (e) => {
             localStorage.setItem("numero", Numero.value);
             window.location.href = "./cadastro.html";
           } else {
-            effect.style.setProperty("--effectwow", "red");
+            effectCep.style.setProperty("--effectwow", "red");
             Cep.title = "CEP inválido";
             Cep.value = "";
             habilitarBotaom();
@@ -29,13 +31,28 @@ consultDisponibilidade.addEventListener("click", (e) => {
       })
       .catch((e) => {
         console.log(e.message);
-        effect.style.setProperty("--effectwow", "red");
+        effectCep.style.setProperty("--effectwow", "red");
         Cep.title = "Insira um CEP";
         habilitarBotaom();
         Cep.focus();
       });
   } else {
-    alert("Acesso Concedido");
-    window.location.href = "./cadastro.html";
+    Closemodal()
+    swal("Acesso Concedido", "Apesar do Cep não ser válido :(", "success", {
+      button: "Continuar"
+    })
+    .then(ev => {
+      window.location.href = "./cadastro.html";
+    })
+    .catch(e => {
+      window.location.href = "./cadastro.html";
+    })
   }
 });
+
+/* let continuar = await(swal("Acesso Concedido", "Apesar do Cep não ser válido :(", "success", {
+  button: "Continuar"
+}));
+if(continuar) {
+  window.location.href = "./cadastro.html";
+} */
