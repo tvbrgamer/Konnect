@@ -63,14 +63,16 @@
             <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
             <div id="dados">
                 <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" maxlength="9" placeholder="CEP:" oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
+                    <input id="cepInputt" class="effect-8" type="text" maxlength="9" placeholder="CEP:"
+                        oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
                 </div>
 
                 <div id="numeroInput" class="col-3">
-                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
+                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"
+                        oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
                     <span class="focus-border">
                         <i></i>
                     </span>
@@ -104,7 +106,7 @@
 
     <section id="cardArea">
 
-        <div class="cardBox">
+        <div class="cardBox" id="cardItemNormal">
             <div class="cardItem">
                 <div class="txtArea">
                     <h1>75 Mega</h1>
@@ -128,6 +130,10 @@
         </div>
 
         <div class="cardBox">
+            <div class="cardTop" id="cardMaisvendido">
+                <img src="/imagens/estrela.png" alt="" srcset="">
+                <span>&nbsp Mais vendido</span>
+            </div>
             <div class="cardItem">
                 <div class="txtArea">
                     <h1>100 Mega</h1>
@@ -151,6 +157,10 @@
         </div>
 
         <div class="cardBox">
+            <div class="cardTop" id="cardMaisvelocidade">
+                <img src="/imagens/estrela.png" alt="" srcset="">
+                <span>&nbsp Mais velocidade</span>
+            </div>
             <div class="cardItem">
                 <div class="txtArea">
                     <h1>500 Mega</h1>

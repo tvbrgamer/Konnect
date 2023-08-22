@@ -82,7 +82,7 @@ dialog::backdrop {
 
 #cepInput {
   width: 356px;
-  
+
 }
 
 #numeroInput {
@@ -148,7 +148,8 @@ dialog::backdrop {
 section#cardArea {
   font-family: 'Lato', sans-serif;
   display: flex;
-  justify-content:center;
+  justify-content: center;
+  align-items: end;
   background: linear-gradient(180deg, #AAD7FF 0%, #78BFFF 100%);
   margin-right: auto;
   margin-left: auto;
@@ -174,16 +175,45 @@ section#cardArea {
   min-width: 280px;
   width: 30%;
   max-width: 325px;
-  height: 408px;
+  height: 450px;
   margin: 1%;
 }
 
+.cardTop {
+  position: absolute;
+  width: 100%;
+  max-width: 306px;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #000;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+#cardMaisvendido {
+  background-color: #C664F4;
+}
+
+#cardMaisvelocidade {
+  background-color: #FFA723;
+}
+
 .cardItem {
-  height: 240px;
+  position: absolute;
+  width: 100%;
+  height: 410px;
+  bottom: 0;
+}
+
+#cardItemNormal {
+  height: 420px;
 }
 
 .cardItem .txtArea {
   width: 100%;
+  margin-top: 4%;
   padding: 4%;
 }
 
@@ -291,12 +321,12 @@ section#ESports {
 @media screen and (max-width: 2000px) {
 
   section#ESports h1 {
-    font-size: 1.8vw!important;
+    font-size: 1.8vw !important;
   }
-  
+
   section#ESports h3 {
-    margin-top: 20%!important;
-    font-size: 1vw!important;
+    margin-top: 20% !important;
+    font-size: 1vw !important;
   }
 }
 
