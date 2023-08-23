@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 440px;
+    height: 100%;
     margin-top: 5%;
     font-family: 'Lato', sans-serif;
 }
@@ -11,7 +11,9 @@
 
 #marcadores {
     background-color: #B1DEFF;
-    height: 314px;
+    display: flex;
+    flex-direction: column;
+    height: min-content;
     width: 260px;
     font-size: 20px;
     border-style: solid;
@@ -27,6 +29,7 @@ ul {
 }
 
 li {
+    height: 14.28571429%;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -34,6 +37,7 @@ li {
 }
 
 .uncheckedLi {
+    aspect-ratio: 1/1;
     width: 12px;
     height: 12px;
     background-color: #D7ECFF;
@@ -45,6 +49,7 @@ li {
 }
 
 .checkedLi {
+    aspect-ratio: 1/1;
     width: 15px;
     height: 15px;
     background-color: #D7ECFF;
@@ -56,6 +61,7 @@ li {
 }
 
 .doneLi {
+    aspect-ratio: 1/1;
     background: #4DA2F9 url(../imagens/done.png) no-repeat center 5px;
     width: 30px;
     height: 30px;
@@ -64,17 +70,17 @@ li {
 }
 
 .linha {
-    height: 80px;
-    width: 1px;
-    margin-left: 14.5px;
-    background-color: black;
+    height: 31px;
+    width: 100%;
+    margin-left: 13.5px;
+    border-left: 2px solid #000000;
 }
 
 .linhapronta {
-    height: 80px;
-    width: 1px;
+    height: 31px;
+    width: 100%;
     margin-left: 14.5px;
-    background-color: #4DA2F9;
+    border-left: 2px solid #4DA2F9;
 }
 
 /* dados area */
@@ -115,7 +121,6 @@ li {
     display: flex;
     align-items: center;
     padding: 5%;
-    align-items: center;
     max-width: 340px;
     height: 40px;
     border-radius: 20px;
@@ -125,20 +130,36 @@ li {
     background-color: #41F5AA;
 }
 
-.column .botao{
+.column .botao {
     position: absolute;
     bottom: 15px;
 }
 
-#data{
-    height: 45px;
+.senhainputField{
+    margin-top: 12%;
+    height: min-content;
 }
 
-#dataDiv h2{
+#senhaTxt,
+#confirmsenhaTxt{
+    margin-bottom: 5%;
     font-size: 130%;
 }
 
-#radio{
+#data {
+    width: 100%;
+    height: 45px;
+}
+
+#dataDiv{
+    width: 100%;
+}
+
+#dataDiv h2 {
+    font-size: 130%;
+}
+
+#radio {
     display: flex;
     justify-content: space-between;
     padding: 5%;
