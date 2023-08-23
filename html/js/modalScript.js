@@ -5,7 +5,7 @@ const botaoFechar = document.querySelector("#updialogbutton");
 const effectCep = document.querySelector(".effect-8#cepInputt~.focus-border");
 var desativado = false;
 
-// Valida se todos os inputs estão corretos e então habilita o botão
+//* Valida se todos os inputs estão corretos e então habilita o botão
 const habilitarBotaom = () => {
   const inputCep = document.querySelector("#cepInputt").value;
   const inputNumero = document.querySelector("#numeroInputt").value;
@@ -21,7 +21,7 @@ const habilitarBotaom = () => {
   }
 };
 
-// Valida se o cep digitado segue o padrão
+//* Valida se o cep digitado segue o padrão
 const validarCep = (cep) => {
   let test = /[0-9]{5}-[0-9]{3}/;
   cep = cep.replace(/^\s+|\s+$/g, "");
@@ -32,7 +32,7 @@ const validarCep = (cep) => {
   }
 };
 
-// Faz com que ao terminar de digitar o cep, o foco vá para o input de número e retira a borda vermelha de erro
+//* Faz com que ao terminar de digitar o cep, o foco vá para o input de número e retira a borda vermelha de erro
 Cep.addEventListener("input", () => {
   let inputlength = Cep.value.length;
   Cep.style.borderColor = "#ccc";
@@ -43,7 +43,7 @@ Cep.addEventListener("input", () => {
   }
 });
 
-// Desabilita o input de número ao deixar marcado a chk
+//* Desabilita o input de número ao deixar marcado a chk
 const ToggleNum = () => {
   if (chkNPN.checked) {
     desativado = true;
@@ -57,7 +57,7 @@ const ToggleNum = () => {
   habilitarBotaom();
 };
 
-// Limpa o inputs ao fechar o modal
+//* Limpa o inputs ao fechar o modal
 const Limpar = () => {
   effectCep.style.setProperty("--effectwow", "#3399FF");
   Cep.value = "";
@@ -66,7 +66,7 @@ const Limpar = () => {
   Numero.disabled = false;
 };
 
-// Deixa salvo no localStorage o plano selecionado
+//* Deixa salvo no localStorage o plano selecionado
 const Valor = (valor) => {
   if (valor == "39") {
     localStorage.setItem("mega", "75");
@@ -80,7 +80,7 @@ const Valor = (valor) => {
   }
 };
 
-// permite o click no botão utilizando o enter
+//* permite o click no botão utilizando o enter
 const keyboard = (event) => {
   if (
     event.keyCode === 13 &&
@@ -93,7 +93,7 @@ const keyboard = (event) => {
 Cep.addEventListener("keydown", keyboard);
 Numero.addEventListener("keydown", keyboard);
 
-// Mascara do Cep
+//* Mascara do Cep
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#cepInputt", {
     delimiters: ["-"],

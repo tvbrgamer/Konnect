@@ -1,10 +1,9 @@
+const consultDisponibilidade = document.querySelector(
+  "#consultDisponibilidade"
+);
 
-
-const consultDisponibilidade = document.querySelector("#consultDisponibilidade");
-
-
-// Meu orgulho 🤠 -> A partir do Cep informado, utiliza a web api Viacep para achar o endereço
-consultDisponibilidade.addEventListener("click",  e => {
+//* Meu orgulho 🤠 -> A partir do Cep informado, utiliza a web api Viacep para achar o endereço
+consultDisponibilidade.addEventListener("click", (e) => {
   let pesquisaCep = Cep.value.replace("-", "");
   const opcoes = {
     method: "get",
@@ -37,15 +36,16 @@ consultDisponibilidade.addEventListener("click",  e => {
         Cep.focus();
       });
   } else {
-    Closemodal()
+    Closemodal();
     swal("Acesso Concedido", "Apesar do Cep não ser válido :(", "success", {
-      button: "Continuar"
-    })
-    .then(ev => {
+      button: "Continuar",
+    }).then((ev) => {
       window.location.href = "./cadastro.html";
-    })
+    });
   }
 });
+
+//! Usei async/await mas não era necessário, então deixei comentado
 
 /* let continuar = await(swal("Acesso Concedido", "Apesar do Cep não ser válido :(", "success", {
   button: "Continuar"

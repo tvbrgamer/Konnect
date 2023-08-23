@@ -1,208 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon" />
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="imagens/iconeaba.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="css/borda.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/fontes.css">
+    <link rel="stylesheet" href="css/borda.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/fontes.css" />
 
     <script defer src="js/modal.js"></script>
     <script defer src="js/modalScript.js"></script>
-    <script defer src="js/geolocalizacao.js"></script>
+    <script defer src="js/cep.js"></script>
     <script defer src="js/valida.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Konnect</title>
-</head>
+  </head>
 
-<body class="scroll" onload="ToggleNum()">
+  <body class="scroll" onload="ToggleNum()">
     <header>
-        <div id="Logo">
-            <a href="index.html"> <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"></a>
-        </div>
-        <div id="headerButton">
-            <a href="aindanfiz.html">
-                <div id="atendimento">Atendimento</div>
-            </a>
-            <a href="sobrenos.html">
-                <div id="sobre">Sobre Nós</div>
-            </a>
-            <a href="login.html" class="login">
-                <div class="login">
-                    <img src="imagens/login.png" alt="login icone" width="39px" height="39px" id="imgLogin">
-                    <span id="loginTxt">Login</span>
-                </div>
-            </a>
-        </div>
+      <div id="Logo">
+        <a href="index.html">
+          <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"
+        /></a>
+      </div>
+      <div id="headerButton">
+        <a href="aindanfiz.html">
+          <div id="atendimento">Atendimento</div>
+        </a>
+        <a href="sobrenos.html">
+          <div id="sobre">Sobre Nós</div>
+        </a>
+        <a href="login.html" class="login">
+          <div class="login">
+            <img
+              src="imagens/login.png"
+              alt="login icone"
+              width="39px"
+              height="39px"
+              id="imgLogin"
+            />
+            <span id="loginTxt">Login</span>
+          </div>
+        </a>
+      </div>
     </header>
 
     <dialog id="dialog">
+      <div id="upDialog">
+        <h2 id="updialogH2">Assinatura</h2>
 
-        <div id="upDialog">
+        <button id="updialogButton" onclick="Closemodal()" type="button">
+          X
+        </button>
+      </div>
 
-            <h2 id="updialogH2">Assinatura</h2>
+      <div id="bottomDialog">
+        <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
+        <div id="dados">
+          <div id="cepInput" class="col-3">
+            <input
+              id="cepInputt"
+              class="effect-8"
+              type="text"
+              maxlength="9"
+              placeholder="CEP:"
+              oninput="habilitarBotaom()"
+              onchange="habilitarBotaom()"
+              autocomplete="off"
+            />
+            <span class="focus-border">
+              <i></i>
+            </span>
+          </div>
 
-            <button id="updialogButton" onclick="Closemodal()" type="button"> X </button>
+          <div id="numeroInput" class="col-3">
+            <input
+              id="numeroInputt"
+              class="effect-8"
+              type="number"
+              maxlength="10"
+              placeholder="Nº:"
+              oninput="habilitarBotaom()"
+              onchange="habilitarBotaom()"
+              autocomplete="off"
+            />
+            <span class="focus-border">
+              <i></i>
+            </span>
+          </div>
 
+          <button
+            disabled="disabled"
+            type="submit"
+            id="consultDisponibilidade"
+            class="consultarButton"
+            type="button"
+          >
+            Consultar disponibilidade
+          </button>
         </div>
 
-        <div id="bottomDialog">
-            <h2 id="bottomdialogH2">Insira o CEP do local de instalação</h2>
-            <div id="dados">
-                <div id="cepInput" class="col-3">
-                    <input id="cepInputt" class="effect-8" type="text" maxlength="9" placeholder="CEP:"
-                        oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
-                    <span class="focus-border">
-                        <i></i>
-                    </span>
-                </div>
+        <div id="utilitario">
+          <a
+            id="nseiCEP"
+            href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Não sei meu CEP</a
+          >
 
-                <div id="numeroInput" class="col-3">
-                    <input id="numeroInputt" class="effect-8" type="number" maxlength="10" placeholder="Nº:"
-                        oninput="habilitarBotaom()" onchange="habilitarBotaom()" autocomplete="off">
-                    <span class="focus-border">
-                        <i></i>
-                    </span>
-                </div>
-
-                <button disabled="disabled" type="submit" id="consultDisponibilidade" class="consultarButton"
-                    type="button">Consultar
-                    disponibilidade</button>
-
-            </div>
-
-            <div id="utilitario">
-
-                <a id="nseiCEP" href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
-                    rel="noopener noreferrer">Não sei meu CEP</a>
-
-                <div id="ntemNum">
-                    <input type="checkbox" id="chkNPN" value="" onchange="ToggleNum()"> Não possuo número
-                </div>
-            </div>
-
+          <div id="ntemNum">
+            <input
+              type="checkbox"
+              id="chkNPN"
+              value=""
+              onchange="ToggleNum()"
+            />
+            Não possuo número
+          </div>
         </div>
-
+      </div>
     </dialog>
 
-
     <div id="txtBody">
-        <h1>Planos de Internet para a sua casa</h1>
-        <h3>Aproveite as opções de planos que temos para você.</h3>
+      <h1>Planos de Internet para a sua casa</h1>
+      <h3>Aproveite as opções de planos que temos para você.</h3>
     </div>
 
     <section id="cardArea">
+      <div class="cardBox" id="cardItemNormal">
+        <div class="cardItem">
+          <div class="txtArea">
+            <h1>75 Mega</h1>
 
-        <div class="cardBox" id="cardItemNormal">
-            <div class="cardItem">
-                <div class="txtArea">
-                    <h1>75 Mega</h1>
+            <h3>Internet com wifi grátis</h3>
 
-                    <h3>Internet com wifi grátis</h3>
+            <h4>Acesso ao Konnectus</h4>
 
-                    <h4>Acesso ao Konnectus</h4>
-
-                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
-                </div>
-            </div>
-            <div class="cardBottom">
-                <div class="txtArea">
-                    <h3>A partir de:</h3>
-                    <h1>R$ 39,90/mês</h1>
-                </div>
-                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button39" name="39">
-                    Assinar
-                </button>
-            </div>
+            <img
+              class="imgKonnectus"
+              src="imagens/Konnectus.png"
+              alt="konnectus"
+              width="40px"
+            />
+          </div>
         </div>
-
-        <div class="cardBox">
-            <div class="cardTop" id="cardMaisvendido">
-                <img src="./imagens/estrela.png" alt="" srcset="">
-                <span>&nbsp Mais vendido</span>
-            </div>
-            <div class="cardItem">
-                <div class="txtArea">
-                    <h1>100 Mega</h1>
-
-                    <h3>Internet com wifi grátis</h3>
-
-                    <h4>Acesso ao Konnectus</h4>
-
-                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
-                </div>
-            </div>
-            <div class="cardBottom">
-                <div class="txtArea">
-                    <h3>A partir de:</h3>
-                    <h1>R$ 69,90/mês</h1>
-                </div>
-                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button69" name="69">
-                    Assinar
-                </button>
-            </div>
+        <div class="cardBottom">
+          <div class="txtArea">
+            <h3>A partir de:</h3>
+            <h1>R$ 39,90/mês</h1>
+          </div>
+          <button
+            onclick="Showmodal(), Valor(name)"
+            class="buttonAssinar"
+            id="button39"
+            name="39"
+          >
+            Assinar
+          </button>
         </div>
+      </div>
 
-        <div class="cardBox">
-            <div class="cardTop" id="cardMaisvelocidade">
-                <img src="./imagens/estrela.png" alt="" srcset="">
-                <span>&nbsp Mais velocidade</span>
-            </div>
-            <div class="cardItem">
-                <div class="txtArea">
-                    <h1>500 Mega</h1>
-
-                    <h3>Internet com wifi grátis</h3>
-
-                    <h4>Acesso ao Konnectus</h4>
-
-                    <img class="imgKonnectus" src="imagens/Konnectus.png" alt="konnectus" width="40px">
-                </div>
-            </div>
-            <div class="cardBottom">
-                <div class="txtArea">
-                    <h3>A partir de:</h3>
-                    <h1>R$ 169,90/mês</h1>
-                </div>
-                <button onclick="Showmodal(), Valor(name)" class="buttonAssinar" id="button169" name="169">
-                    Assinar
-                </button>
-            </div>
+      <div class="cardBox">
+        <div class="cardTop" id="cardMaisvendido">
+          <img src="./imagens/estrela.png" alt="" srcset="" />
+          <span>&nbsp Mais vendido</span>
         </div>
+        <div class="cardItem">
+          <div class="txtArea">
+            <h1>100 Mega</h1>
 
+            <h3>Internet com wifi grátis</h3>
+
+            <h4>Acesso ao Konnectus</h4>
+
+            <img
+              class="imgKonnectus"
+              src="imagens/Konnectus.png"
+              alt="konnectus"
+              width="40px"
+            />
+          </div>
+        </div>
+        <div class="cardBottom">
+          <div class="txtArea">
+            <h3>A partir de:</h3>
+            <h1>R$ 69,90/mês</h1>
+          </div>
+          <button
+            onclick="Showmodal(), Valor(name)"
+            class="buttonAssinar"
+            id="button69"
+            name="69"
+          >
+            Assinar
+          </button>
+        </div>
+      </div>
+
+      <div class="cardBox">
+        <div class="cardTop" id="cardMaisvelocidade">
+          <img src="./imagens/estrela.png" alt="" srcset="" />
+          <span>&nbsp Mais velocidade</span>
+        </div>
+        <div class="cardItem">
+          <div class="txtArea">
+            <h1>500 Mega</h1>
+
+            <h3>Internet com wifi grátis</h3>
+
+            <h4>Acesso ao Konnectus</h4>
+
+            <img
+              class="imgKonnectus"
+              src="imagens/Konnectus.png"
+              alt="konnectus"
+              width="40px"
+            />
+          </div>
+        </div>
+        <div class="cardBottom">
+          <div class="txtArea">
+            <h3>A partir de:</h3>
+            <h1>R$ 169,90/mês</h1>
+          </div>
+          <button
+            onclick="Showmodal(), Valor(name)"
+            class="buttonAssinar"
+            id="button169"
+            name="169"
+          >
+            Assinar
+          </button>
+        </div>
+      </div>
     </section>
     <section id="ESports">
+      <div id="txtArea">
+        <h1>Conheça o nosso time de E-Sports</h1>
+        <h3>
+          Venha conhecer o universo dos Kagueimers,<br /><br />
+          um time de e-sports que não para de surpreender!<br /><br />
+          Acompanhe-nos e seja parte dessa incrível jornada gueimer!
+        </h3>
+      </div>
 
-        <div id="txtArea">
-            <h1>Conheça o nosso time de E-Sports</h1>
-            <h3>Venha conhecer o universo dos Kagueimers,<br><br>
-                um time de e-sports que não para de surpreender!<br><br>
-                Acompanhe-nos e seja parte dessa incrível jornada gueimer!</h3>
-        </div>
-
-        <img id="imgESports" src="imagens/Kagagueime.png" alt="ESports kagueimers">
+      <img
+        id="imgESports"
+        src="imagens/Kagagueime.png"
+        alt="ESports kagueimers"
+      />
     </section>
 
     <footer>
-        <div id="footerA">
-            <a href="aindanfiz.html">Política de privacidade</a>
-            <a href="aindanfiz.html">Portal de privacidade</a>
-        </div>
-        <div id="direitosFooter">© 2023 Konnect. Todos os direitos reservados. CNPJ: 25.940.934/0001-34 - Rua Coronel
-            Alencastro, 48 - Rio de Janeiro - RJ</div>
+      <div id="footerA">
+        <a href="aindanfiz.html">Política de privacidade</a>
+        <a href="aindanfiz.html">Portal de privacidade</a>
+      </div>
+      <div id="direitosFooter">
+        © 2023 Konnect. Todos os direitos reservados. CNPJ: 25.940.934/0001-34 -
+        Rua Coronel Alencastro, 48 - Rio de Janeiro - RJ
+      </div>
     </footer>
-
-</body>
+  </body>
+</html>

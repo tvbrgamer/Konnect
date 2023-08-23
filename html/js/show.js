@@ -3,7 +3,7 @@ const olha = document.getElementById("olho");
 
 var hidden = true;
 
-// Modifica a imagem do "olhinho" (show/hide password)
+//* Modifica a imagem do "olhinho" (show/hide password)
 olha.addEventListener("click", () => {
   if (hidden == true) {
     senha.type = "text";

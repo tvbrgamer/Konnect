@@ -1,7 +1,7 @@
 1 - tela login > CPF e/ou email no login
-2 - tela Cadastro > Colocar Senha
-3 - página principal > mudança mais suave entre as tonalidades/manter paleta de cores
-4 - página principal > destacar mais os planos Ex.: Mais comprado
+2 - -- tela Cadastro > Colocar Senha --
+3 - -- página principal > mudança mais suave entre as tonalidades/manter paleta de cores --
+4 - -- página principal > destacar mais os planos Ex.: Mais comprado --
 5*- mudar/retirar o nome do time
 6 - página Sobre nós > mudar as fotos (F zeldinha)
 7* - adicionar propagandas

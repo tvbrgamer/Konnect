@@ -8,13 +8,13 @@ const tel = document.querySelector("#tel");
 const date = document.querySelector("#data");
 const botao = document.querySelector(".botao");
 
-// Recupera os dados referentes ao plano escolhido e o preço
+//* Recupera os dados referentes ao plano escolhido e o preço
 const recuperarDados = () => {
   txtMega.textContent = `${localStorage.getItem("mega")}`;
   txtPreco.innerHTML = `${localStorage.getItem("valor")}`;
 };
 
-// Valida se o cpf digitado segue o padrão
+//* Valida se o cpf digitado segue o padrão
 const validarCpf = (cpf) => {
   let test = /\d+\.\d+\.\d+-\d+/;
   cpf = cpf.replace(/^\s+|$\s+/g, "");
@@ -29,7 +29,7 @@ const validarCpf = (cpf) => {
   }
 };
 
-// Valida se o rg digitado segue o padrão
+//* Valida se o rg digitado segue o padrão
 const validarRG = (rg) => {
   let test = /\d+\.\d+\.\d+-\d+/;
   rg = rg.replace(/^\s+|$\s+/g, "");
@@ -44,7 +44,7 @@ const validarRG = (rg) => {
   }
 };
 
-// Valida se a data digitada segue o padrão
+//* Valida se a data digitada segue o padrão
 const validarDate = (date) => {
   let test = /\d+\/\d+\/\d+/;
   if (test.test(date)) {
@@ -54,7 +54,12 @@ const validarDate = (date) => {
   }
 };
 
-// Verifica se o cpf é válido
+//! WIP
+/* const validarEmail = (email) => {
+
+} */
+
+//* Verifica se o cpf é válido
 const verificarCpf = (cpf) => {
   let soma = 0;
   let resto;
@@ -91,7 +96,7 @@ const verificarCpf = (cpf) => {
   return true;
 };
 
-// Verifica se o rg é válido
+//* Verifica se o rg é válido
 const verificarRg = (rg) => {
   let soma = 0;
   let strRg = rg.split(".").join("").split("-").join("");
@@ -135,7 +140,7 @@ const verificarRg = (rg) => {
   return false;
 };
 
-// Valida se todos os inputs estão corretos e então habilita o botão
+//* Valida se todos os inputs estão corretos e então habilita o botão
 const habilitarBotao = () => {
   if (
     cpf.value.length === 14 &&
@@ -144,8 +149,8 @@ const habilitarBotao = () => {
     rg.value.length === 12
   ) {
     if (
-      validarCpf(cpf.value) &&
-      validarRG(rg.value) &&
+      (validarCpf(cpf.value) || cpf.value == "111.111.111-11") &&
+      (validarRG(rg.value) || rg.value == "11.111.111-1") &&
       validarDate(date.value)
     ) {
       document.querySelector(".botao").disabled = false;
@@ -158,7 +163,7 @@ const habilitarBotao = () => {
   }
 };
 
-// Verifica se a data digitada representa uma pessoa entre 18 a 125 anos
+//* Verifica se a data digitada representa uma pessoa entre 18 a 125 anos
 date.addEventListener("blur", (e) => {
   date.type = "text";
   date.value = date.value.replace(
@@ -172,19 +177,21 @@ date.addEventListener("blur", (e) => {
   let dataTest = new Date();
   dataTest = dataTest.toString().split(" ");
   if (dataTest[3] - testData >= 18 && dataTest[3] - testData <= 125) {
+    date.style.borderColor = "#ccc"
     habilitarBotao();
   } else {
-    
     let effect = document.querySelector(".effect-8#data~.focus-border");
-    console.log(effect)
+    date.style.borderColor = "red"
     effect.style.setProperty("--effectwow", "red");
-    date.value = "";
   }
 });
 
-// Permite que ao apertar enter, o botão seja acionado
+//* Permite que ao apertar enter, o botão seja acionado
 const keyboard = (event) => {
-  if (event.keyCode === 13 && document.querySelector(".botao").disabled == false) {
+  if (
+    event.keyCode === 13 &&
+    document.querySelector(".botao").disabled == false
+  ) {
     botao.click();
   }
 };
@@ -194,7 +201,7 @@ email.addEventListener("keypress", keyboard);
 rg.addEventListener("keypress", keyboard);
 nome.addEventListener("keypress", keyboard);
 
-// Mascára do Cpf
+//* Mascára do Cpf
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#cpf", {
@@ -204,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Mascára do RG
+//* Mascára do RG
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#rg", {
@@ -214,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Mascára do Telefone
+//* Mascára do Telefone
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#tel", {
