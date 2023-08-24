@@ -86,8 +86,9 @@ li {
 /* dados area */
 
 #dados {
-    background-color: #ffffff;
-    padding: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
     border-radius: 20px;
     margin-left: 1%;
     margin-right: 1%;
@@ -108,7 +109,6 @@ li {
     max-width: 340px;
     height: 250px;
     gap: 15px;
-    margin-top: 15px;
 }
 
 .col-3,
