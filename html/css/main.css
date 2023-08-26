@@ -126,12 +126,10 @@ dialog::backdrop {
 #txtBody {
 
   font-family: 'Lato', sans-serif;
-  width: 600px;
-  height: 80px;
+  width: 100%;
+  height: fit-content;
   text-align: center;
   margin-top: 105px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 89px;
 }
 
@@ -157,14 +155,6 @@ section#cardArea {
   max-width: 1020px;
   height: 100%;
   border-radius: 10px;
-}
-
-@media screen and (max-width: 900px) {
-  section#cardArea {
-    flex-wrap: wrap;
-    width: min-content;
-    padding: 1%;
-  }
 }
 
 .cardBox {
@@ -318,18 +308,6 @@ section#ESports {
   margin-right: 5%;
 }
 
-@media screen and (max-width: 2000px) {
-
-  section#ESports h1 {
-    font-size: 1.8vw !important;
-  }
-
-  section#ESports h3 {
-    margin-top: 20% !important;
-    font-size: 1vw !important;
-  }
-}
-
 section#ESports h1 {
   font-size: 1vw;
 }
@@ -337,4 +315,41 @@ section#ESports h1 {
 section#ESports h3 {
   margin-top: 10%;
   font-size: 0.5vw
+}
+
+
+@media screen and (max-width: 620px) {
+  #imgESports {
+  max-height: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  
+  section#cardArea {
+    flex-wrap: wrap;
+    width: min-content;
+    padding: 1%;
+  }
+
+  #txtBody h1 {
+    font-size: 130%;
+  }
+
+  #txtBody h3 {
+    font-size: 100%;
+  }
+}
+
+
+@media screen and (max-width: 2000px) {
+
+  section#ESports h1 {
+    font-size: 1.8vw;
+  }
+
+  section#ESports h3 {
+    margin-top: 20%;
+    font-size: 1vw;
+  }
 }
