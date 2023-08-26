@@ -289,8 +289,10 @@ section#ESports {
   justify-content: space-between;
   align-items: center;
   margin-top: 57px;
-  height: 55vh;
+  height: fit-content;
   max-height: 657px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   background-color: rgba(115, 115, 115, 0.46);
   margin-bottom: clamp(150px, 25vh, 990px);
 }
@@ -304,7 +306,8 @@ section#ESports {
 
 #imgESports {
   border-radius: 10%;
-  max-height: 80%;
+ max-width: 30%;
+  aspect-ratio: 1/1;
   margin-right: 5%;
 }
 
@@ -320,7 +323,7 @@ section#ESports h3 {
 
 @media screen and (max-width: 620px) {
   #imgESports {
-  max-height: 50%;
+  max-width: 50%;
   }
 }
 
