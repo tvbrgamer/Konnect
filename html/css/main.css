@@ -2,7 +2,7 @@
 
 dialog {
   position: absolute;
-  z-index: 100;
+  z-index: 10;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -324,6 +324,18 @@ section#ESports h3 {
 @media screen and (max-width: 620px) {
   #imgESports {
   max-width: 50%;
+  }
+}@media screen and (min-width: 1800px) {
+  #imgESports {
+  max-width: 20%;
+  }
+}@media screen and (min-width: 2200px) {
+  #imgESports {
+  max-width: 15%;
+  }
+}@media screen and (min-width: 2200px) {
+  #imgESports {
+  max-width: 15%;
   }
 }
 
