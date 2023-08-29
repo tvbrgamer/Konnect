@@ -86,18 +86,41 @@ li {
 /* dados area */
 
 #dados {
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    width: 40%;
+    max-width: 690px;
     padding-left: 1%;
     padding-bottom: 1%;
     padding-right: 1%;
     border-radius: 20px;
+    height: 280px;
     margin-left: 1%;
     margin-right: 1%;
+}
+
+#dadosPag {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 690px;
+    gap: 3%;
+    border-radius: 20px;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+}
+
+#formPag {
+    background-color: #41F5AA;
+    border-radius: 20px;
     width: 40%;
     max-width: 690px;
     height: 280px;
-    display: flex;
-    flex-direction: row;
     gap: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .column {
@@ -135,13 +158,13 @@ li {
     bottom: 1px;
 }
 
-.senhainputField{
+.senhainputField {
     margin-top: 12%;
     height: min-content;
 }
 
 #senhaTxt,
-#confirmsenhaTxt{
+#confirmsenhaTxt {
     margin-bottom: 5%;
     font-size: 130%;
 }
@@ -151,7 +174,7 @@ li {
     height: 45px;
 }
 
-#dataDiv{
+#dataDiv {
     width: 100%;
 }
 
@@ -163,13 +186,21 @@ li {
     display: flex;
     justify-content: space-between;
     padding: 5%;
+}
 
+.radioDiv{
+    width: 50%;
+    padding-left: 2%;
+    background-color: #4DA2F9;
 }
 
 .radioPagamento {
-    padding-top: 10px;
-    padding-left: 5px;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
 }
 
 .radioPagamento input[type='radio'] {
@@ -179,10 +210,6 @@ li {
     border-radius: 100%;
     outline: none;
     background-color: #bebebe;
-}
-
-.Pagamento{
-
 }
 
 /* planos area */

@@ -22,26 +22,26 @@
 <body onload="recuperarDados()">
     <header>
         <div id="Logo">
-          <a href="index.html">
-            <img id="imgLogo" src="imagens/icon.png" alt="capivara logo"/>
-          </a>
+            <a href="index.html">
+                <img id="imgLogo" src="imagens/icon.png" alt="capivara logo" />
+            </a>
         </div>
         <div id="headerButton">
-          <a href="aindanfiz.html">
-            <div id="atendimento">Atendimento</div>
-          </a>
-          <a href="sobrenos.html">
-            <div id="sobre">Sobre Nós</div>
-          </a>
-          <a href="login.html" class="loginA">
-            <div class="login">
-              <div id="imgLogin"></div>
-              <span id="loginTxt">Login</span>
-            </div>
-          </a>
+            <a href="aindanfiz.html">
+                <div id="atendimento">Atendimento</div>
+            </a>
+            <a href="sobrenos.html">
+                <div id="sobre">Sobre Nós</div>
+            </a>
+            <a href="login.html" class="loginA">
+                <div class="login">
+                    <div id="imgLogin"></div>
+                    <span id="loginTxt">Login</span>
+                </div>
+            </a>
         </div>
-      </header>
-      <div id="cadastro">
+    </header>
+    <div id="cadastro">
         <div id="marcadores">
             <ul>
                 <li>
@@ -50,7 +50,7 @@
                 </li>
                 <div class="linhapronta">&nbsp;</div>
                 <li>
-                <div class="doneLi"></div>
+                    <div class="doneLi"></div>
                     Definir Senha
                 </li>
                 <div class="linhapronta">&nbsp;</div>
@@ -65,27 +65,26 @@
                 </li>
             </ul>
         </div>
-        <form action="pagamento.html" method="get" id="dados">
-            <div class="column">
-                <div class="radioPagamento">
-                        <input type="radio" name="tipoPagamento" id="debito">
-                        <label for="manha">Débito em conta</label>
+        <form action="pagamento.html" method="get" id="formPag">
+            <div class="radioPagamento">
+                <div class="radioDiv">
+                    <input type="radio" name="tipoPagamento" id="debito">
+                    <label for="manha">Débito em conta</label>
                 </div>
-
-
-
-                <button type="button" class="botao" onclick="history.back()">
-                    < Voltar para a etapa anterior</button>
+                <div class="radioDiv">
+                    <input type="radio" name="tipoPagamento" id="boleto">
+                    <label for="manha">Boleto</label>
+                </div>
             </div>
-            <div class="column">
-                <div class="radioPagamento">
-                        <input type="radio" name="tipoPagamento" id="boleto">
-                        <label for="manha">Boleto</label>
+            <div id="dadosPag">
+                <div class="column">
+
+                    <button type="button" class="botao" onclick="history.back()">
+                        < Voltar para a etapa anterior</button>
                 </div>
-
-
-
-                <button class="botao" type="submit" value="submit">Prosseguir para a próxima etapa ></button>
+                <div class="column">
+                    <button class="botao" type="submit" value="submit">Prosseguir para a próxima etapa ></button>
+                </div>
             </div>
         </form>
         <div id="plano">
@@ -123,7 +122,7 @@
     </footer>
     <div id="mensagemTela">
         <h2>Nosso site não suporta esse tamanho de tela atualmente</h2>
-      </div>
+    </div>
 </body>
 
 </html>
