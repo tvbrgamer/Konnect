@@ -163,28 +163,41 @@ const habilitarBotao = () => {
   }
 };
 
-//* Verifica se a data digitada representa uma pessoa entre 18 a 125 anos
+date.addEventListener("input", () => {
+  let effect = document.querySelector(".effect-8#data~.focus-border");
+  date.style.borderColor = "#ccc"
+  effect.style.setProperty("--effectwow", "#3399FF")
+  if(date.value.length >= 10) {
+    validateDate()
+  }
+})
+date.addEventListener("change", () => {
+  let effect = document.querySelector(".effect-8#data~.focus-border");
+  date.style.borderColor = "#ccc"
+  effect.style.setProperty("--effectwow", "#3399FF")
+})
+
 date.addEventListener("blur", (e) => {
-  date.type = "text";
-  date.value = date.value.replace(
-    /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/,
-    (m, v1, v2, v3) => {
-      return `${v3}/${v2}/${v1}`;
-    }
-  );
+  validateDate();
+});
+
+//* Verifica se a data digitada representa uma pessoa entre 18 a 125 anos
+const validateDate = () => {
   partesData = date.value.split("/");
   let testData = `${partesData[2]}`;
   let dataTest = new Date();
   dataTest = dataTest.toString().split(" ");
   if (dataTest[3] - testData >= 18 && dataTest[3] - testData <= 125) {
+    let effect = document.querySelector(".effect-8#data~.focus-border");
     date.style.borderColor = "#ccc"
+    effect.style.setProperty("--effectwow", "#3399FF")
     habilitarBotao();
   } else {
     let effect = document.querySelector(".effect-8#data~.focus-border");
     date.style.borderColor = "red"
     effect.style.setProperty("--effectwow", "red");
   }
-});
+}
 
 //* Permite que ao apertar enter, o botão seja acionado
 const keyboard = (event) => {
@@ -201,7 +214,7 @@ email.addEventListener("keypress", keyboard);
 rg.addEventListener("keypress", keyboard);
 nome.addEventListener("keypress", keyboard);
 
-//* Mascára do Cpf
+//* Máscara do Cpf
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#cpf", {
@@ -211,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//* Mascára do RG
+//* Máscara do RG
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#rg", {
@@ -221,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//* Mascára do Telefone
+//* Máscara do Telefone
 
 document.addEventListener("DOMContentLoaded", () => {
   new Cleave("#tel", {
@@ -230,3 +243,12 @@ document.addEventListener("DOMContentLoaded", () => {
     numericOnly: true,
   });
 });
+
+//* Máscara da Data
+
+document.addEventListener("DOMContentLoaded", () => {
+  new Cleave("#data", {
+    date: true,
+    datePattern: ["d", "m", "Y"]
+  })
+})
