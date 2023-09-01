@@ -6,7 +6,7 @@ const rg = document.querySelector("#rg");
 const nome = document.querySelector("#nome");
 const tel = document.querySelector("#tel");
 const date = document.querySelector("#data");
-const botao = document.querySelector(".botao");
+const botaoAvancar = document.querySelector(".botao");
 
 //* Recupera os dados referentes ao plano escolhido e o preço
 const recuperarDados = () => {
@@ -15,11 +15,11 @@ const recuperarDados = () => {
 };
 
 //* Valida se o cpf digitado segue o padrão
-const validarCpf = (cpf) => {
+const isCpf = (cpf) => {
   let test = /\d+\.\d+\.\d+-\d+/;
   cpf = cpf.replace(/^\s+|$\s+/g, "");
   if (test.test(cpf)) {
-    if (verificarCpf(cpf)) {
+    if (validateCpf(cpf)) {
       return true;
     } else {
       return false;
@@ -30,11 +30,11 @@ const validarCpf = (cpf) => {
 };
 
 //* Valida se o rg digitado segue o padrão
-const validarRG = (rg) => {
+const isRG = (rg) => {
   let test = /\d+\.\d+\.\d+-\d+/;
   rg = rg.replace(/^\s+|$\s+/g, "");
   if (test.test(rg)) {
-    if (verificarRg(rg)) {
+    if (validateRg(rg)) {
       return true;
     } else {
       return false;
@@ -45,7 +45,7 @@ const validarRG = (rg) => {
 };
 
 //* Valida se a data digitada segue o padrão
-const validarDate = (date) => {
+const isDate = (date) => {
   let test = /\d+\/\d+\/\d+/;
   if (test.test(date)) {
     return true;
@@ -60,7 +60,7 @@ const validarDate = (date) => {
 } */
 
 //* Verifica se o cpf é válido
-const verificarCpf = (cpf) => {
+const validateCpf = (cpf) => {
   let soma = 0;
   let resto;
   let strCpf = cpf.split(".").join("").split("-").join("");
@@ -97,7 +97,7 @@ const verificarCpf = (cpf) => {
 };
 
 //* Verifica se o rg é válido
-const verificarRg = (rg) => {
+const validateRg = (rg) => {
   let soma = 0;
   let strRg = rg.split(".").join("").split("-").join("");
   if (strRg == "000000000") {
@@ -149,17 +149,17 @@ const habilitarBotao = () => {
     rg.value.length === 12
   ) {
     if (
-      (validarCpf(cpf.value) || cpf.value == "111.111.111-11") &&
-      (validarRG(rg.value) || rg.value == "11.111.111-1") &&
-      validarDate(date.value)
+      (isCpf(cpf.value) || cpf.value == "111.111.111-11") &&
+      (isRG(rg.value) || rg.value == "11.111.111-1") &&
+      isDate(date.value)
     ) {
-      document.querySelector(".botao").disabled = false;
+      botaoAvancar.disabled = false;
       return;
     } else {
-      document.querySelector(".botao").disabled = true;
+      botaoAvancar.disabled = true;
     }
   } else {
-    document.querySelector(".botao").disabled = true;
+    botaoAvancar.disabled = true;
   }
 };
 
@@ -190,9 +190,9 @@ date.addEventListener("blur", (e) => {
 const keyboard = (event) => {
   if (
     event.keyCode === 13 &&
-    document.querySelector(".botao").disabled == false
+    botaoAvancar.disabled == false
   ) {
-    botao.click();
+    botaoAvancar.click();
   }
 };
 
