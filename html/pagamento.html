@@ -65,28 +65,7 @@
                 </li>
             </ul>
         </div>
-        <form action="pagamento.html" method="get" id="formPag">
-            <div class="radioPagamento">
-                <div class="radioDiv">
-                    <input type="radio" name="tipoPagamento" id="debito">
-                    <label for="manha">Débito em conta</label>
-                </div>
-                <div class="radioDiv">
-                    <input type="radio" name="tipoPagamento" id="boleto">
-                    <label for="manha">Boleto</label>
-                </div>
-            </div>
-            <div id="dadosPag">
-                <div class="column">
-
-                    <button type="button" class="botao" onclick="history.back()">
-                        < Voltar para a etapa anterior</button>
-                </div>
-                <div class="column">
-                    <button class="botao" type="submit" value="submit">Prosseguir para a próxima etapa ></button>
-                </div>
-            </div>
-        </form>
+        <iframe title="Iframe" id="formPag" src="/boleto.html" frameborder="0" scrolling="no"></iframe>
         <div id="plano">
             <div id="title">
                 <img id="titleImg" src="./imagens/carrinho.png" alt="carrinho">

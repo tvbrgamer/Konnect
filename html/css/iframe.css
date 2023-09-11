@@ -1,111 +1,13 @@
-#cadastro {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 5%;
-    font-family: 'Lato', sans-serif;
-}
-
-/* demostrador da parte do cadastro area */
-
-#marcadores {
-    background-color: #B1DEFF;
-    display: flex;
-    flex-direction: column;
-    height: min-content;
-    width: 260px;
-    font-size: 20px;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: black;
-    border-width: 1px;
-}
-
-ul {
-    padding: 35px 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-li {
-    height: 14.28571429%;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 10px;
-}
-
-.uncheckedLi {
-    aspect-ratio: 1/1;
-    width: 12px;
-    height: 12px;
-    background-color: #D7ECFF;
-    border-style: solid;
-    border-color: #4DA2F9;
-    border-width: 9px;
-    border-radius: 50px;
-    box-sizing: content-box;
-}
-
-.checkedLi {
-    aspect-ratio: 1/1;
-    width: 15px;
-    height: 15px;
-    background-color: #D7ECFF;
-    border-style: solid;
-    border-color: #4DA2F9;
-    border-width: 7px;
-    border-radius: 50px;
-    box-sizing: content-box;
-}
-
-.doneLi {
-    aspect-ratio: 1/1;
-    background: #4DA2F9 url(../imagens/done.png) no-repeat center 5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    box-sizing: content-box;
-}
-
-.linha {
-    height: 31px;
-    width: 100%;
-    margin-left: 13.5px;
-    border-left: 2px solid #000000;
-}
-
-.linhapronta {
-    height: 31px;
-    width: 100%;
-    margin-left: 14.5px;
-    border-left: 2px solid #4DA2F9;
-}
-
-/* dados area */
-
-#dados {
-    display: flex;
-    flex-direction: row;
-    gap: 3%;
-    width: 40%;
-    max-width: 690px;
-    padding-left: 1%;
-    padding-bottom: 1%;
-    padding-right: 1%;
-    border-radius: 20px;
-    height: 280px;
-    margin-left: 1%;
-    margin-right: 1%;
+body {
+    width: 100vw;
+    height: 100vh;
+    background: none;
 }
 
 #dadosPag {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 690px;
-    gap: 3%;
     border-radius: 20px;
     padding-left: 1%;
     padding-bottom: 1%;
@@ -113,10 +15,22 @@ li {
 }
 
 #formPag {
-    width: 33%;
-    height: 350px;
-    margin-left: 1%;
-    margin-right: 1%;
+    border-radius: 20px;
+    width: 100%;
+    height: 280px;
+}
+
+h3 {
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+h5 {
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: #AF0202;
 }
 
 .column {
@@ -124,23 +38,43 @@ li {
     flex-direction: column;
     display: flex;
     align-items: center;
-    width: 50%;
-    max-width: 340px;
-    height: 250px;
+    width: 100%;
+    height: 90vh;
     gap: 15px;
+    padding-top: 5px;
+}
+
+.columna {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+#botoes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .col-3,
 .effect-8 {
-    width: 100%;
-    max-width: 340px;
+    min-width: 120px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .botao {
     display: flex;
     align-items: center;
     padding: 5%;
-    max-width: 340px;
+    max-width: 170px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid #000;
@@ -184,16 +118,15 @@ li {
     padding: 5%;
 }
 
-.radioDiv{
+.radioDiv {
     width: 50%;
     padding-left: 2%;
-    background-color: #4DA2F9;
 }
 
 .radioPagamento {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    padding-top: 5px;
     margin-left: 2%;
     margin-right: 2%;
     width: 96%;
@@ -305,4 +238,13 @@ footer {
     position: absolute;
     bottom: 0;
     /* Footer height */
+}
+
+@media screen and (max-width: 680px) {
+    input::placeholder {
+        position: absolute;
+        top: 18px;
+        left: 10px;
+        font-size: 10px;
+    }
 }
